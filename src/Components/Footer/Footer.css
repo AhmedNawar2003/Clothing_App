@@ -1,0 +1,96 @@
+.footer {
+  text-transform: capitalize;
+  color: var(--primary);
+  background-color: #e4e4e4;
+  padding-top: 50px;
+}
+.footer .logo {
+  width: 100px;
+}
+.footer .logo {
+  margin-bottom: 30px;
+}
+.footer p {
+  margin-bottom: 14px;
+  font-size: 14px;
+  padding-right: 20px;
+}
+.footer .social-links {
+  display: flex;
+  gap: 15px;
+}
+.footer .social-links i {
+  color: var(--primary);
+  transition: all 0.5s;
+  &:hover {
+    color: var(--secondary);
+  }
+}
+.footer h3 {
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.footer ul {
+  padding: 0;
+}
+.footer .card {
+  padding: 0;
+}
+.footer ul li {
+  margin-bottom: 10px;
+}
+.footer ul li .footerLink {
+  color: var(--primary);
+  transition: all 0.5s;
+  cursor: pointer;
+  position: relative;
+  &:hover {
+    color: var(--secondary);
+  }
+}
+.footer .footerLink::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition: all 0.5s;
+}
+.footer .footerLink:hover::after {
+  width: 100%;
+}
+.footer h3.subscribe{
+    margin-bottom: 35px;
+}
+.footer .input-group{
+    background-color: var(--main);
+    margin-bottom: 30px;
+    display: flex;
+    
+}
+.footer h6{
+    color: var(--primary);
+}
+.footer .form-control{
+    border: none;
+    color: var(--secondary);
+    padding: 10px 20px;
+    transition: all 0.5s;
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+.footer .join{
+    background-color: var(--main);
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.footer .card-body{
+    padding: 0;
+}

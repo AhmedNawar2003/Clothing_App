@@ -1,0 +1,67 @@
+.collections .card {
+  margin-bottom: 24px;
+  position: relative;
+}
+.collections .content {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+}
+.e-gift-card {
+  background-color: var(--tertiary) !important;
+  height: 92%;
+}
+.collections h6 {
+  font-size: 16px;
+  color: var(--primary);
+}
+.e-gift-card h6 {
+  font-size: 14px;
+  font-weight: 400;
+}
+.collections h2 {
+  margin: 10px 0;
+  font-size: 25px;
+}
+.collections .link {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  &:hover {
+    color: var(--secondary);
+  }
+}
+.collections .link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  color: var(--primary);
+  transition: width 0.5s ease-in-out;
+}
+
+.collections .link:hover::after {
+  width: 100%;
+}
+
+/* Responsive */
+
+@media only screen and (max-width: 992px) {
+  .e-gift-card {
+    height: 345px !important;
+  }
+  .collections .card {
+    margin-bottom: 16px !important;
+    align-items: center;
+  }
+  .collections .image img {
+    width: 448px;
+  }
+
+  .collections h2 {
+    font-size: 20px;
+  }
+}

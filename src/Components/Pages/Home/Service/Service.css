@@ -1,0 +1,22 @@
+.Service .card{
+    text-align: center;
+    gap: 10px;
+}
+.Service .icon i{
+    font-size: 30px;
+    color: var(--primary);
+    transition: all 0.5s; 
+    cursor: pointer;
+    &:hover{
+        color: var(--secondary);
+    }
+}
+.Service h3{
+    font-size: 18px;
+    color: var(--primary);
+}
+.Service p{
+    text-transform: capitalize;
+    font-size: 14px;
+    color: #767676;
+}

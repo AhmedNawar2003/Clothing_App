@@ -1,0 +1,23 @@
+.T-shirts{
+    padding-top: 50px;
+}
+.image {
+  position: relative;
+}
+.content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+.white-text h6,
+.white-text h2,
+.white-text .link {
+  color: var(--main);
+}
+.T-shirts .link::after {
+  color: var(--main);
+}
+h2 {
+  text-transform: capitalize;
+  font-size: 25px;
+}

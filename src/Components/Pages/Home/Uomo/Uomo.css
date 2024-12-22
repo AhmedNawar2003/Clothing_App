@@ -1,0 +1,42 @@
+.Uomo {
+  padding-top: 30px;
+}
+.Uomo h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  color: var(--primary);
+  margin-bottom: 25px;
+}
+.Uomo .card {
+  margin-bottom: 20px;
+}
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.imageList {
+  animation: fadeInScale 0.5s ease-in-out;
+  will-change: opacity, transform;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.imageList img {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.imageList:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}

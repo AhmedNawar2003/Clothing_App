@@ -1,0 +1,120 @@
+.summer {
+  padding-top: 0;
+}
+.carousel-item {
+  background-image: url("../../../../assets/image/slideshow-pattern.png");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-color: var(--tertiary);
+}
+.card-img {
+  display: flex;
+  justify-content: center;
+}
+.text {
+  position: relative;
+  left: 20%;
+  align-items: baseline;
+  justify-content: center;
+  height: 100%;
+}
+.carousel-item .card-img img {
+  width: 300px;
+}
+h6 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 14px;
+  color: var(--secondary);
+}
+h2 {
+  margin: 20px 0;
+}
+h2 div {
+  font-size: 50px;
+  color: var(--primary);
+}
+h2 .women {
+  font-weight: 500;
+}
+.red-line {
+  display: flex;
+  width: 30px;
+  height: 2px;
+  background-color: var(--secondary);
+}
+h2 .limitTime {
+  font-size: 16px;
+}
+.link {
+  color: var(--primary);
+  position: relative;
+}
+.link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.5s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-image: none;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 992px) {
+  .carousel-item .card-img img {
+    width: 250px !important;
+  }
+  h2 div {
+    font-size: 40px !important;
+  }
+  h2 .limitTime {
+    font-size: 14px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-item .card-img img {
+    width: 200px !important;
+    margin-top: 20px;
+  }
+  .text {
+    padding-top: 50px;
+  }
+  h2 div {
+    font-size: 30px !important;
+  }
+  h2 .limitTime {
+    font-size: 12px !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .carousel-item .card-img img {
+    width: 150px !important;
+    margin-top: 30px !important;
+  }
+  h2 div {
+    font-size: 20px !important;
+  }
+  h2 .limitTime {
+    font-size: 10px !important;
+  }
+  .red-line {
+    display: none;
+  }
+}
