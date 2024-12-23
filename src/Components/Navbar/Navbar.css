@@ -59,7 +59,7 @@ button:not(:disabled) {
 .navbar-toggler-icon {
   background-image: none;
 }
-.SignUP{
+ .SignUP{
     background-color: var(--secondary);
     color: var(--primary);
     border: none;
