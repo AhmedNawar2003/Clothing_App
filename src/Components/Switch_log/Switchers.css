@@ -1,0 +1,36 @@
+* {
+    text-transform: uppercase !important;
+}
+
+.switchers {
+    width: 50%;
+    margin: 50px auto;
+    justify-content: center;
+    gap: 10px;
+
+    button {
+        background-color: transparent;
+        width: fit-content;
+        padding: 5px;
+        color: var(--primary);
+        font-weight: 500;
+        position: relative;
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transition: all 0.5s ease;
+        }
+
+        &:hover::after {
+            width: calc(100% - 10px);
+            left: 5px;
+        }
+    }
+}
