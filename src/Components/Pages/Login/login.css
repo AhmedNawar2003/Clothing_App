@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
+.logIn {
+    width: 40%;
+    margin: 20px auto;
+    justify-content: center;
+    gap: 10px;
+
+    label {
+        margin-inline-start: 10px;
+    }
+
+    input {
+        border-radius: 0px;
+        padding: 10px;
+
+        &:focus {
+            border: 2px solid #000;
+            box-shadow: none;
+
+        }
+    }
+
+    p {
+        text-transform: capitalize !important;
+    }
+
+    .logBtn {
+        background-color: #000;
+        color: #fff;
+        padding: 20px;
+    }
+
+    .toRegister {
+        text-align: center;
+
+        p {
+            text-transform: capitalize !important;
+
+            a {
+                text-transform: capitalize !important;
+                text-decoration: underline !important;
+                color: #000;
+            }
+        }
+
+
+    }
+
+}
