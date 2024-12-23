@@ -12,7 +12,7 @@ export default function MenKidsCollections() {
               <div className="image">
                 <img src={collection2} alt="collection2" />
               </div>
-              <div className="content">
+              <div className="content menContent">
                 <h6>Hot List</h6>
                 <h2>Men Collection</h2>
                 <Link className="link" to="">shop now</Link>
@@ -29,14 +29,14 @@ export default function MenKidsCollections() {
                   <div className="image">
                     <img src={collection3} alt="collection3" />
                   </div>
-                  <div className="content">
+                  <div className="content Kids-content">
                     <h6>Hot List</h6>
                     <h2>KIDS Collection</h2>
                     <Link className="link" to="">shop now</Link>
                   </div>
                 </div>
               </div>
-              <div className="col-lg-6">
+              <div className="col-lg-6 Gift">
                 <div className="card e-gift-card">
                   <div className="">
 

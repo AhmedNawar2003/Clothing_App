@@ -13,7 +13,7 @@ export default function Collections() {
                 <div className="image">
                   <img src={collection1} alt="collection1" />
                 </div>
-                <div className="content">
+                <div className="content women-content">
                   <h6>Hot List</h6>
                   <h2>Women Collection</h2>
                   <Link className="link" to="">shop now</Link>
