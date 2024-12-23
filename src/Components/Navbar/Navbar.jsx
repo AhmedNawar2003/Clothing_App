@@ -1,4 +1,4 @@
-import "./Navbar.css";
+import  "./Navbar.css";
 import logo from "../../assets/image/logo.webp";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
