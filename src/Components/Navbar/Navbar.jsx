@@ -1,9 +1,16 @@
-import  "./Navbar.css";
+import "./Navbar.css";
 import logo from "../../assets/image/logo.webp";
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
+  const [activeLink, setActiveLink] = useState(""); 
+  const location = useLocation(); 
+
+  useEffect(() => {
+    setActiveLink(location.pathname); 
+  }, [location]);
+
   useEffect(() => {
     const header = document.getElementById("header");
 
@@ -15,10 +22,7 @@ export default function Navbar() {
       }
     };
 
-    // Attach the scroll event listener
     window.addEventListener("scroll", handleScroll);
-
-    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -51,27 +55,51 @@ export default function Navbar() {
             >
               <ul className="navbar-nav m-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <Link className="nav-link active" aria-current="page" to="/">
+                  <Link
+                    className={`nav-link ${activeLink === "/" ? "active" : ""}`}
+                    aria-current="page"
+                    to="/"
+                  >
                     Home
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="shop">
+                  <Link
+                    className={`nav-link ${
+                      activeLink === "/shop" ? "active" : ""
+                    }`}
+                    to="shop"
+                  >
                     Shop
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="blog">
+                  <Link
+                    className={`nav-link ${
+                      activeLink === "/blog" ? "active" : ""
+                    }`}
+                    to="blog"
+                  >
                     Blog
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="about">
+                  <Link
+                    className={`nav-link ${
+                      activeLink === "/about" ? "active" : ""
+                    }`}
+                    to="about"
+                  >
                     About
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="contact">
+                  <Link
+                    className={`nav-link ${
+                      activeLink === "/contact" ? "active" : ""
+                    }`}
+                    to="contact"
+                  >
                     Contact
                   </Link>
                 </li>
