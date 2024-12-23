@@ -1,0 +1,21 @@
+.our_story h3 {
+  margin-bottom: 24px;
+  color: var(--primary);
+  font-size: 25px;
+}
+.our_story .paragraph1 {
+  text-transform: initial !important;
+  font-size: 16px;
+  color: var(--primary);
+  margin-bottom: 24px;
+  font-weight: 500;
+  line-height: 1.875rem;
+}
+
+.our_story .paragraph2 {
+  text-transform: initial !important;
+  font-size: 14px;
+  color: var(--primary);
+  margin-bottom: 24px;
+  line-height: 1.875rem;
+}

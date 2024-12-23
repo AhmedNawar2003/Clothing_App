@@ -73,48 +73,4 @@ h2 .limitTime {
   background-image: none;
 }
 
-/* Responsive */
 
-@media screen and (max-width: 992px) {
-  .carousel-item .card-img img {
-    width: 250px !important;
-  }
-  h2 div {
-    font-size: 40px !important;
-  }
-  h2 .limitTime {
-    font-size: 14px !important;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .carousel-item .card-img img {
-    width: 200px !important;
-    margin-top: 20px;
-  }
-  .text {
-    padding-top: 50px;
-  }
-  h2 div {
-    font-size: 30px !important;
-  }
-  h2 .limitTime {
-    font-size: 12px !important;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .carousel-item .card-img img {
-    width: 150px !important;
-    margin-top: 30px !important;
-  }
-  h2 div {
-    font-size: 20px !important;
-  }
-  h2 .limitTime {
-    font-size: 10px !important;
-  }
-  .red-line {
-    display: none;
-  }
-}

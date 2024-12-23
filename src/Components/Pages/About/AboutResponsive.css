@@ -1,0 +1,57 @@
+@media screen and (max-width: 992px) {
+  .aboutUomo h2 {
+    font-size: 30px;
+  }
+  .Company .imgCard {
+    align-items: center;
+  }
+  .Company .card img {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .aboutUomo h2 {
+    font-size: 20px;
+  }
+  .Company .card img {
+    width: 250px !important;
+  }
+  .our_story h3 {
+    font-size: 18px !important;
+  }
+  .our_story .paragraph1 {
+    font-size: 14px !important;
+  }
+  .Company .card-text {
+    h2 {
+      font-size: 20px !important;
+    }
+    p {
+      font-size: 14px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .aboutUomo h2 {
+    font-size: 16px;
+  }
+  .Company .card img {
+    width: 200px !important;
+  }
+  .our_story h3 {
+    font-size: 16px !important;
+  }
+  .our_story.paragraph1 {
+    font-size: 12px !important;
+  }
+  .Company .card-text {
+    h2 {
+      font-size: 16px !important;
+    }
+    p {
+      font-size: 12px !important;
+    }
+  }
+}

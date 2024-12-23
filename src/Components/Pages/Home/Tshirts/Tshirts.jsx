@@ -1,4 +1,5 @@
 import "./Tshirts.css";
+import "../HomeResponsive.css";
 import banner1 from "../../../../assets/image/banner_1.jpg";
 import banner2 from "../../../../assets/image/banner_2.jpg";
 import { Link } from "react-router-dom";

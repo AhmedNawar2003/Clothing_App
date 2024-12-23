@@ -1,5 +1,6 @@
 import ImgList from "./ImgList";
 import "./Uomo.css";
+import "../HomeResponsive.css";
 export default function Uomo() {
   return (
     <div>

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Collections.css";
+import "../HomeResponsive.css";
 import collection1 from "../../../../assets/image/collection_grid_1.jpg";
 import MenKidsCollections from "./MenKidsCollections";
 export default function Collections() {

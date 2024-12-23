@@ -1,5 +1,6 @@
 import about from "../../../../assets/image/about-1.webp";
 import "./AboutUomo.css";
+import '../AboutResponsive.css';
 export default function AboutUomo() {
   return (
     <>

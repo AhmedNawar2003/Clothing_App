@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./SpringCollections.css";
+import "../HomeResponsive.css";
 import { useEffect, useState } from "react";
 
 export default function SpringCollections({

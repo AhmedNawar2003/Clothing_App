@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import character1 from "../../../../assets/image/slideshow-character1.webp";
 import character2 from "../../../../assets/image/slideshow-character2.webp";
 import "./Summer.css";
+import "../HomeResponsive.css";
 export default function Summer() {
   return (
     <>

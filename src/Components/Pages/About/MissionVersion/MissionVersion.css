@@ -1,0 +1,13 @@
+.mission_version h2 {
+  color: var(--primary);
+  margin-bottom: 16px;
+  font-size: 18px;
+  text-transform: initial !important;
+}
+
+.mission_version p {
+  color: var(--primary);
+  font-size: 14px;
+  line-height: 1.6;
+  text-transform: initial !important;
+}

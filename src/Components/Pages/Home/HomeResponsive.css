@@ -1,0 +1,311 @@
+@media screen and (max-width: 992px) {
+  .carousel-item .card-img img {
+    width: 250px !important;
+  }
+  h2 div {
+    font-size: 40px !important;
+  }
+  h2 .limitTime {
+    font-size: 14px !important;
+  }
+  .e-gift-card {
+    height: 345px !important;
+    width: 448px;
+  }
+  .collections .card {
+    margin-bottom: 16px !important;
+    align-items: center;
+  }
+  .collections .image img {
+    width: 448px;
+  }
+
+  .collections h2 {
+    font-size: 20px;
+  }
+  .collections .Gift {
+    display: flex;
+    justify-content: center;
+  }
+  .collections .Kids-content,
+  .collections .women-content {
+    left: 145px !important;
+  }
+  .T-shirts .content h2 {
+    font-size: 18px;
+  }
+  .T-shirts .link {
+    font-size: 12px;
+  }
+  .Uomo h2 {
+    font-size: 28px;
+  }
+  .Service .card {
+    margin-bottom: 20px;
+  }
+  .footer p {
+    padding: 0;
+  }
+  .footer .card {
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-item .card-img img {
+    width: 200px !important;
+    margin-top: 20px;
+  }
+  .text {
+    padding-top: 50px;
+  }
+  h2 div {
+    font-size: 30px !important;
+  }
+  h2 .limitTime {
+    font-size: 12px !important;
+  }
+  .collections .Kids-content,
+  .collections .women-content {
+    left: 200px !important;
+  }
+  .collections .image img {
+    width: 350px;
+  }
+  .e-gift-card {
+    width: 350px;
+    height: 302px !important;
+  }
+  .collections h2 {
+    font-size: 18px;
+  }
+  .collections h6 {
+    font-size: 14px;
+  }
+  .collections .link {
+    font-size: 12px;
+  }
+  .T-shirts .content h2 {
+    font-size: 15px;
+  }
+  .T-shirts .link {
+    font-size: 10px;
+  }
+  .Uomo h2 {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .carousel-item .card-img img {
+    width: 150px !important;
+    margin-top: 30px !important;
+  }
+  h2 div {
+    font-size: 20px !important;
+  }
+  h2 .limitTime {
+    font-size: 10px !important;
+  }
+  .red-line {
+    display: none;
+  }
+  .SpringCollections h2 {
+    font-size: 20px;
+  }
+  .SpringCollections .link {
+    font-size: 12px;
+  }
+  .SpringCollections .text {
+    padding-top: 0 !important;
+  }
+  .SpringCollections .time {
+    font-size: 20px;
+  }
+  .T-shirts .card {
+    margin-bottom: 20px;
+  }
+  .T-shirts .content h2 {
+    font-size: 14px;
+  }
+  .T-shirts .link {
+    font-size: 10px;
+  }
+  .Uomo h2 {
+    font-size: 23px;
+  }
+  .imageList img {
+    width: 300px;
+  }
+  .Uomo .card.imageList {
+    align-items: center;
+  }
+  .Service .icon i {
+    font-size: 22px;
+  }
+  .Service h3 {
+    font-size: 15px;
+  }
+  .Service p {
+    font-size: 12px;
+  }
+  .footer .logo {
+    width: 80px;
+  }
+  .footer h3 {
+    font-size: 14px;
+  }
+  .footer p,
+  .footer ul li .footerLink,
+  .footer .sale,
+  .footer.social-links i,
+  .footer .join,
+  .footer .form-control,
+  .footer h6 {
+    font-size: 12px;
+  }
+  .footer .payment img {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .collections .Kids-content,
+  .collections .women-content {
+    left: 45px !important;
+  }
+  .collections .image img {
+    width: 300px;
+  }
+  .e-gift-card {
+    width: 300px;
+    height: 259px !important;
+  }
+  .collections h2 {
+    font-size: 16px;
+  }
+  .collections h6 {
+    font-size: 12px;
+  }
+  .collections.link {
+    font-size: 10px;
+  }
+  .SpringCollections h2 {
+    font-size: 18px !important;
+  }
+  .SpringCollections .link {
+    font-size: 12px !important;
+  }
+  .SpringCollections .time {
+    font-size: 18px !important;
+  }
+  .T-shirts .content h2 {
+    font-size: 13px;
+    margin: 0;
+  }
+  .T-shirts .link {
+    font-size: 9px;
+  }
+  .T-shirts .card {
+    align-items: center;
+  }
+  .T-shirts .content {
+    left: 87px;
+  }
+  .T-shirts .image img {
+    width: 250px;
+  }
+  .Uomo h2 {
+    font-size: 18px;
+  }
+  .imageList img {
+    width: 200px;
+  }
+  .Uomo .card.imageList {
+    align-items: center;
+  }
+  .Service .icon i {
+    font-size: 18px;
+  }
+  .Service h3 {
+    font-size: 14px;
+  }
+  .Service p {
+    font-size: 12px;
+  }
+  .footer .logo {
+    width: 60px;
+  }
+  .footer h3 {
+    font-size: 13px;
+  }
+  .footer p,
+  .footer ul li .footerLink,
+  .footer .sale,
+  .footer.social-links i,
+  .footer .join,
+  .footer .form-control,
+  .footer h6 {
+    font-size: 10px;
+  }
+  .footer .payment img {
+    width: 200px;
+  }
+  .footer .social-links i {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .collections .Kids-content,
+  .collections .women-content {
+    left: 72px !important;
+  }
+}
+@media screen and (max-width: 380px) {
+  .collections .Kids-content,
+  .collections .women-content {
+    left: 50px !important;
+  }
+}
+@media screen and (max-width: 320px) {
+  .collections .Kids-content,
+  .collections .women-content {
+    left: 45px !important;
+  }
+  .collections .image img {
+    width: 250px;
+  }
+  .e-gift-card {
+    width: 250px;
+    height: 209px !important;
+  }
+  .collections .menContent {
+    top: 15px;
+    h2 {
+      margin: 0;
+    }
+  }
+  .collections h2 {
+    font-size: 14px;
+  }
+  .collections h6 {
+    font-size: 10px;
+  }
+  .collections .link {
+    font-size: 8px;
+  }
+  .T-shirts .content h2 {
+    font-size: 12px;
+  }
+  .T-shirts .link {
+    font-size: 8px;
+  }
+  .Uomo h2 {
+    font-size: 15px;
+  }
+  .T-shirts .content {
+    left: 25px;
+    h6 {
+      font-size: 10px;
+    }
+  }
+}

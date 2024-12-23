@@ -3,7 +3,7 @@ import "./Footer.css";
 export default function Subscribe() {
   return (
     <>
-      <div className="col">
+      <div className="col-xl col-lg-3 col-md-4">
         <div className="card">
           <div className="card-head">
             <h3 className="subscribe">Subscribe</h3>
