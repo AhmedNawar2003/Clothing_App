@@ -14,10 +14,10 @@ export default function Login() {
           <input type="password" className="form-control" id="floatingPassword" placeholder="Password" />
           <label htmlFor="floatingPassword">Password *</label>
         </div>
-        <button className="col-12 logBtn">
+        <button className="col-sm-12 col-5 logBtn">
           log in
         </button>
-        <div className="col-12 toRegister">
+        <div className="col-sm-12 col-10 toRegister">
           <p>no account yet ? <a href="">create account</a></p>
         </div>
       </div>

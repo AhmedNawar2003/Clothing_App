@@ -1,3 +1,7 @@
+:root {
+    font-size: 16px;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -9,28 +13,37 @@
     gap: 10px;
 
     label {
-        margin-inline-start: 10px;
+        margin-inline-start: 0.625rem;
+        font-size: 0.625rem;
     }
 
     input {
-        border-radius: 0px;
-        padding: 10px;
+        border-radius: 0;
+        padding: 0.625rem;
 
         &:focus {
-            border: 2px solid #000;
+            border: 0.125rem solid #000;
             box-shadow: none;
-
         }
     }
 
     p {
         text-transform: capitalize !important;
+        font-size: 0.75rem;
     }
 
     .regBtn {
         background-color: #000;
         color: #fff;
-        padding: 20px;
+        padding: 0.625rem;
+        font-size: 0.938rem;
     }
 
+}
+
+/* responsive */
+@media screen and (max-width: 400px) {
+    :root {
+        font-size: 12px;
+    }
 }

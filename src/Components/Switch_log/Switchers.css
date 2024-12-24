@@ -1,12 +1,16 @@
+:root {
+    font-size: 16px;
+}
+
 * {
     text-transform: uppercase !important;
 }
 
 .switchers {
     width: 50%;
-    margin: 50px auto;
+    margin: 3.125rem auto;
     justify-content: center;
-    gap: 10px;
+    gap: 0.625rem;
 
     button {
         background-color: transparent;
@@ -15,12 +19,13 @@
         color: var(--primary);
         font-weight: 500;
         position: relative;
+        font-size: 0.938rem;
 
         &:after {
             position: absolute;
             content: "";
             width: 0;
-            height: 2px;
+            height: 0.125rem;
             background-color: var(--primary);
             left: 0;
             right: 0;
@@ -30,7 +35,14 @@
 
         &:hover::after {
             width: calc(100% - 10px);
-            left: 5px;
+            left: 0.313rem;
         }
+    }
+}
+
+/* responsive */
+@media screen and (max-width: 400px) {
+    :root {
+        font-size: 12px;
     }
 }
