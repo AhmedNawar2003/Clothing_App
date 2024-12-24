@@ -1,0 +1,24 @@
+
+.blogLinks .card{
+    border: 1px solid #ccc !important;
+    padding: 10px;
+    position: relative;
+}
+.blogContent{
+    position: absolute;
+    top: 50%;
+    left: 50px;
+}
+.blogContent h2{
+    font-size: 35px;
+    color: var(--primary);
+    text-transform: uppercase !important;
+    margin-bottom: 10px;
+}
+.blogLinks{
+    display: flex;
+    gap: 30px;
+    .link{
+        text-transform: uppercase !important;
+    }
+}
