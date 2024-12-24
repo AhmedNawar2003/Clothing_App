@@ -1,8 +1,13 @@
+import ContactForm from "./ContactForm/ContactForm";
+import ContactStores from "./ContactStores/ContactStores";
+import Iframe from "./Iframe/Iframe";
 
 export default function Contact() {
   return (
     <div>
-      <h1>Contact</h1>
+      <Iframe/>
+      <ContactStores/>
+      <ContactForm/>
     </div>
   )
 }

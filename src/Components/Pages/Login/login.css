@@ -17,7 +17,7 @@
         padding: 10px;
 
         &:focus {
-            border: 2px solid #000;
+            border: 2px solid var(--primary);
             box-shadow: none;
 
         }
@@ -28,8 +28,8 @@
     }
 
     .logBtn {
-        background-color: #000;
-        color: #fff;
+        background-color: var(--primary);
+        color: var(--main);
         padding: 20px;
     }
 
@@ -42,7 +42,7 @@
             a {
                 text-transform: capitalize !important;
                 text-decoration: underline !important;
-                color: #000;
+                color: var(--primary);
             }
         }
 

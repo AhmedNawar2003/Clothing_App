@@ -1,0 +1,19 @@
+.Iframe{
+    padding: 50px 0;
+}
+.Iframe h2{
+    font-size: 40px;
+    color: var(--primary);
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.Iframe .iframe-card iframe{
+    height: 500px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}

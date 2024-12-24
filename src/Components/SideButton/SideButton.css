@@ -22,3 +22,33 @@
     transition: all 500ms;
   }
   
+  /* Responsive */
+  @media screen and (max-width: 992px) {
+    .btn-info {
+      right: 15px !important;
+      bottom: 15px !important;
+      i{
+        font-size: 15px !important;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .btn-info {
+      right: 10px !important;
+      bottom: 10px !important;
+      i{
+        font-size: 12px !important;
+      }
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .btn-info {
+      right: 5px !important;
+      bottom: 5px !important;
+      i{
+        font-size: 10px !important;
+      }
+    }
+  }
+
+

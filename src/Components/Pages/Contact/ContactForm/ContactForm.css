@@ -1,0 +1,32 @@
+.form form{
+    width: 75%;
+}
+.form input,
+.form textarea{
+    padding: 10px;
+    &:focus{
+        border: 2px solid var(--primary);
+        box-shadow: none;
+        outline: none;
+    }
+}
+.form textarea{
+    height: 100px;
+}
+.form label{
+    text-transform: initial !important;
+}
+.form .submit{
+    background-color: var(--primary);
+    color: var(--main);
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    text-transform: initial !important;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    &:hover{
+        background-color: var(--secondary);
+        color: var(--main);
+    }
+}
