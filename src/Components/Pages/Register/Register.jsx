@@ -18,10 +18,10 @@ export default function Register() {
           <input type="password" className="form-control" id="floatingPassword" placeholder="Password" />
           <label htmlFor="floatingPassword">Password *</label>
         </div>
-        <div className="col-12">
+        <div className="col-sm-12 col-10">
           <p>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.</p>
         </div>
-        <button className="col-12 regBtn">
+        <button className="col-sm-12 col-10 regBtn">
           register
         </button>
       </div>
