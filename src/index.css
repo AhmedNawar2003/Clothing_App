@@ -41,3 +41,6 @@ li {
   background-color: transparent !important;
   border-radius: 0 !important;
 }
+.link{
+  text-transform: capitalize !important;
+}

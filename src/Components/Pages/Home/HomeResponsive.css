@@ -67,7 +67,7 @@
   }
   .collections .Kids-content,
   .collections .women-content {
-    left: 200px !important;
+    left: 105px !important;
   }
   .collections .image img {
     width: 350px;
@@ -167,7 +167,12 @@
     width: 250px;
   }
 }
-
+@media screen and (max-width: 550px) {
+  .collections .Kids-content,
+  .collections .women-content {
+    left: 110px !important;
+  }
+}
 @media screen and (max-width: 480px) {
   .collections .Kids-content,
   .collections .women-content {
@@ -260,10 +265,13 @@
     left: 72px !important;
   }
 }
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 400px) {
   .collections .Kids-content,
   .collections .women-content {
     left: 50px !important;
+  }
+  .SpringCollections .timer{
+    gap: 25px !important;
   }
 }
 @media screen and (max-width: 320px) {
