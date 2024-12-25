@@ -18,7 +18,7 @@ export default function TipsBlog() {
               Midst one brought greater also morning green saying had good. Open
               stars day let over gathered, grass face one every light of under.
             </p>
-            <Link to="" className="link">Continue Reading</Link>
+            <Link to="/blogtips" className="link">Continue Reading</Link>
           </div>
         </div>
       </div>

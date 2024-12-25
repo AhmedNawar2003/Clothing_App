@@ -15,6 +15,11 @@ import Fashion from "./Components/Pages/Blog/Fashion/Fashion";
 import StyleBlog from "./Components/Pages/Blog/StyleBlog/StyleBlog";
 import Trend from "./Components/Pages/Blog/Trend/Trend";
 import Beauty from "./Components/Pages/Blog/Beauty/Beauty";
+import MainBlog from "./Components/Pages/Blog/MainBlog/MainBlog";
+import BlogWomen from "./Components/Pages/Blog/BlogWomen/BlogWomen";
+import BlogTips from "./Components/Pages/Blog/BlogTips/BlogTips";
+import BlogTree from "./Components/Pages/Blog/BlogTree/BlogTree";
+import BlogRule from "./Components/Pages/Blog/BlogRule/BlogRule";
 export default function App() {
   let router = createBrowserRouter([
     {
@@ -40,6 +45,11 @@ export default function App() {
         { path: "register", element: <Register /> },
         { path: "wishlist", element: <Wishlist /> },
         { path: "cart", element: <Cart /> },
+        { path: "mainblog", element: <MainBlog /> },
+        { path: "blogwomen", element: <BlogWomen /> },
+        { path: "blogtips", element: <BlogTips /> },
+        { path: "blogtree", element: <BlogTree /> },
+        { path:"blogrule", element: <BlogRule /> },
       ],
     },
     { path: "*", element: <Error_404 /> },
