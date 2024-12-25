@@ -1,0 +1,108 @@
+@media screen and (max-width: 992px) {
+  .blogContent h2,
+  .detail h2 {
+    font-size: 28px !important;
+  }
+  .blogLinks .link,
+  .detail .date span {
+    font-size: 14px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blogContent {
+    top: 29% !important;
+  }
+  .blogContent h2,
+  .detail h2 {
+    font-size: 22px !important;
+  }
+  .allBlog h3 {
+    font-size: 18px !important;
+  }
+  .allBlog .date span,
+  .allBlog p {
+    font-size: 14px !important;
+  }
+  .allBlog .link {
+    font-size: 14px !important;
+  }
+  .MainBlogImages .card {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .blogContent h2,
+  .detail h2 {
+    font-size: 20px !important;
+  }
+  .blogLinks {
+    gap: 10px !important;
+    .link {
+      text-transform: capitalize !important;
+      font-size: 12px !important;
+    }
+  }
+  .blogContent {
+    top: 10% !important;
+  }
+  .allBlog h3 {
+    font-size: 15px !important;
+  }
+  .allBlog .date span,
+  .allBlog p {
+    font-size: 12px !important;
+  }
+  .allBlog .link {
+    font-size: 12px !important;
+  }
+  .MainBLogText h5 {
+    font-size: 15px !important;
+  }
+  .MainBLogText p,
+  .MainBLogText li,
+  .paragraph_links p,
+  .paragraph_links span{
+    font-size: 12px !important;
+  }
+  .blogLinks .link, .detail .date span {
+    font-size: 12px !important;
+}
+}
+
+@media screen and (max-width: 390px) {
+  .blogContent h2,
+  .detail h2 {
+    font-size: 12px !important;
+  }
+  .blogLinks .link {
+    font-size: 10px !important;
+  }
+  .blogContent {
+    top: 5% !important;
+    left: 24px;
+  }
+  .allBlog h3 {
+    font-size: 10px !important;
+  }
+  .allBlog .date span,
+  .allBlog p {
+    font-size: 10px !important;
+  }
+  .allBlog .link {
+    font-size: 10px !important;
+  }
+  .MainBLogText h5 {
+    font-size: 12px !important;
+  }
+  .MainBLogText p,
+  .MainBLogText li,
+  .paragraph_links p,
+  .paragraph_links span{
+    font-size: 10px !important;
+  }
+  .blogLinks .link, .detail .date span {
+    font-size: 10px !important;
+}
+}
