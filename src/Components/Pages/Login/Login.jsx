@@ -2,12 +2,15 @@ import { useState } from "react";
 import "./login.css";
 import Switchers from "../../Switch_log/Switchers";
 import { Link, useNavigate } from "react-router-dom";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
-export default function Login({setUser}) {
+export default function Login({ setUser }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const Navigate = useNavigate();
+
   const handleLogin = () => {
+    // Fetch user data from localStorage
     const storedUser = JSON.parse(localStorage.getItem("user"));
 
     if (
@@ -16,9 +19,15 @@ export default function Login({setUser}) {
       storedUser.password === password
     ) {
       alert("Login successful!");
-      // Redirect or set user as logged in
+
+      // Update the application state
+      setUser(storedUser);
+
+      // Persist login state
       localStorage.setItem("isLoggedIn", "true");
-      Navigate ("/"); // Example redirection
+
+      // Navigate to the homepage
+      Navigate("/");
     } else {
       alert("Invalid email or password");
     }
@@ -26,6 +35,14 @@ export default function Login({setUser}) {
 
   return (
     <>
+      <HelmetProvider>
+        <Helmet>
+          <title>Login</title>
+          <meta name="description" content="Login Page" />
+          <meta property="og:title" content="Login" />
+          <meta property="og:description" content="Login Page" />
+        </Helmet>
+      </HelmetProvider>
       <div className="container">
         <Switchers />
         <div className="row logIn">

@@ -5,6 +5,7 @@ import WomenBlog from "./WomenBlog/WomenBlog";
 import TipsBlog from "./TipsBlog/TipsBlog";
 import TreeBlog from "./TreeBlog/TreeBlog";
 import RuleBlog from "./RuleBlog/RuleBlog";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 export default function Blog() {
   const location = useLocation();
@@ -14,6 +15,15 @@ export default function Blog() {
 
   return (
     <div>
+      <HelmetProvider>
+        <Helmet>
+          <title>Blog</title>
+          <meta name="description" content="Discover the latest news, tips, and blog posts from our team." />
+          <meta name="keywords" content="blog, news, tips, women's fashion, men's fashion, accessories, travel, fashion, design" />
+          <meta property="og:title" content="Blog" />
+          <meta property="og:description" content="Discover the latest news, tips, and blog posts from our team." />
+        </Helmet>
+      </HelmetProvider>
       <BlogLinks />
       <section className="allBlog">
         <div className="container">

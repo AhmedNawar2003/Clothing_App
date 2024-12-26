@@ -8,10 +8,12 @@ export default function Navbar({ user, setUser }) {
   const location = useLocation();
   const Navigate = useNavigate();
 
+  // Track active link based on location
   useEffect(() => {
     setActiveLink(location.pathname);
   }, [location]);
 
+  // Add fixed header class on scroll
   useEffect(() => {
     const header = document.getElementById("header");
 
@@ -29,11 +31,11 @@ export default function Navbar({ user, setUser }) {
     };
   }, []);
 
+  // Fetch user data from localStorage
   useEffect(() => {
-    // Fetch user data from localStorage
     const storedUser = JSON.parse(localStorage.getItem("user"));
     setUser(storedUser);
-  }, []);
+  }, [setUser]);
 
   const handleLogout = () => {
     localStorage.removeItem("user");
@@ -66,101 +68,112 @@ export default function Navbar({ user, setUser }) {
               className="collapse navbar-collapse"
               id="navbarSupportedContent"
             >
-              <ul className="navbar-nav m-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <Link
-                    className={`nav-link ${activeLink === "/" ? "active" : ""}`}
-                    aria-current="page"
-                    to="/"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    className={`nav-link ${
-                      activeLink === "/shop" ? "active" : ""
-                    }`}
-                    to="shop"
-                  >
-                    Shop
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    className={`nav-link ${
-                      activeLink === "/blog" ? "active" : ""
-                    }`}
-                    to="blog"
-                  >
-                    Blog
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    className={`nav-link ${
-                      activeLink === "/about" ? "active" : ""
-                    }`}
-                    to="about"
-                  >
-                    About
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    className={`nav-link ${
-                      activeLink === "/contact" ? "active" : ""
-                    }`}
-                    to="contact"
-                  >
-                    Contact
-                  </Link>
-                </li>
-              </ul>
+              {user && (
+                <ul className="navbar-nav m-auto mb-2 mb-lg-0">
+                  <li className="nav-item">
+                    <Link
+                      className={`nav-link ${
+                        activeLink === "/" ? "active" : ""
+                      }`}
+                      aria-current="page"
+                      to="/"
+                    >
+                      Home
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className={`nav-link ${
+                        activeLink === "/shop" ? "active" : ""
+                      }`}
+                      to="/shop"
+                    >
+                      Shop
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className={`nav-link ${
+                        activeLink === "/blog" ? "active" : ""
+                      }`}
+                      to="/blog"
+                    >
+                      Blog
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className={`nav-link ${
+                        activeLink === "/about" ? "active" : ""
+                      }`}
+                      to="/about"
+                    >
+                      About
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className={`nav-link ${
+                        activeLink === "/contact" ? "active" : ""
+                      }`}
+                      to="/contact"
+                    >
+                      Contact
+                    </Link>
+                  </li>
+                </ul>
+              )}
               <ul className="icons">
                 <li className="nav-item">
                   <span className="nav-link name">
                     {user ? `Welcome, ${user.username}` : "Guest"}
                   </span>
                 </li>
-                <li>
-                  <span>
-                    <i className="fa-brands fa-searchengin"></i>
-                  </span>
-                </li>
-                <li>
-                  <Link to="login">
-                    <span>
-                      <i className="fa-solid fa-user"></i>
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="wishlist">
-                    <span>
-                      <i className="fa-regular fa-heart"></i>
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="cart">
-                    <span>
-                      <i className="fa-solid fa-shopping-cart"></i>
-                    </span>
-                  </Link>
-                </li>
-                <Link to="register">
-                  <button className="SignUP">SignUp</button>
-                </Link>
+                {!user && (
+                  <>
+                    <li>
+                      <Link to="login">
+                        <span>
+                          <i className="fa-solid fa-user"></i>
+                        </span>
+                      </Link>
+                    </li>
+
+                    <Link to="register">
+                      <button className="SignUP">SignUp</button>
+                    </Link>
+                  </>
+                )}
                 {user && (
-                  <li className="nav-item">
-                    <span
-                      className="nav-link logout-icon"
-                      onClick={handleLogout}
-                    >
-                      {user ? "🔓" : "🔒"} {/* Unlock/lock icon */}
-                    </span>
-                  </li>
+                  <>
+                    <li>
+                      <span>
+                        <i className="fa-brands fa-searchengin"></i>
+                      </span>
+                    </li>
+                    <li>
+                      <Link to="wishlist">
+                        <span>
+                          <i className="fa-regular fa-heart"></i>
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="cart">
+                        <span>
+                          <i className="fa-solid fa-shopping-cart"></i>
+                        </span>
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <span
+                        className="nav-link logout-icon"
+                        onClick={handleLogout}
+                      >
+                        <i className="fa-solid fa-right-from-bracket"></i>
+                      </span>
+                    </li>
+                  </>
                 )}
               </ul>
             </div>
