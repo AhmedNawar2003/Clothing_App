@@ -1,4 +1,5 @@
 import Collections from "./Collections/Collections";
+import Limited from "./LimitedEdition/Limited";
 import Service from "./service/service";
 import SpringCollections from "./SpringCollections/SpringCollections";
 import Summer from "./Summer/Summer";
@@ -19,6 +20,7 @@ export default function Home() {
         initialSeconds={59}
       />
       <Tshirts />
+      <Limited />
       <Uomo />
       <Service />
     </div>

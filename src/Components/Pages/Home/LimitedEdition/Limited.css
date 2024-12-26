@@ -1,0 +1,59 @@
+:root {
+    font-size: 16px;
+}
+
+.limited {
+    text-align: center;
+
+    .header {
+        text-align: center;
+
+        h2 {
+            text-align: center;
+
+            span {
+                font-weight: bolder;
+            }
+        }
+    }
+
+    .products {
+        .item {
+            text-align: start;
+            border: 1px solid #000;
+            margin: 0.625rem;
+
+            .img {
+                cursor: pointer;
+            }
+
+            .info {
+                position: relative;
+                margin: 0.625rem;
+
+                .tag {
+                    text-transform: capitalize !important;
+                    margin-bottom: 0.313rem;
+                }
+
+                .towishlist {
+                    i {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        cursor: pointer;
+                    }
+                }
+
+                .name {
+                    text-transform: capitalize !important;
+                    color: var(--primary);
+                    margin: 0;
+                }
+
+
+            }
+        }
+    }
+
+}
