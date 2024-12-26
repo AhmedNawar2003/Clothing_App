@@ -20,9 +20,10 @@
     input {
         border-radius: 0;
         padding: 0.625rem;
+        text-transform: initial !important;
 
         &:focus {
-            border: 0.125rem solid #000;
+            border: 0.125rem solid var(--primary);
             box-shadow: none;
         }
     }
@@ -33,8 +34,8 @@
     }
 
     .regBtn {
-        background-color: #000;
-        color: #fff;
+        background-color: var(--primary);
+        color: var(--main);
         padding: 0.625rem;
         font-size: 0.938rem;
     }

@@ -11,7 +11,6 @@
     margin: 3.125rem auto;
     justify-content: center;
     gap: 0.625rem;
-
     button {
         background-color: transparent;
         width: fit-content;
@@ -20,7 +19,9 @@
         font-weight: 500;
         position: relative;
         font-size: 0.938rem;
-
+        .linkBtn{
+            color: var(--primary);
+        }
         &:after {
             position: absolute;
             content: "";

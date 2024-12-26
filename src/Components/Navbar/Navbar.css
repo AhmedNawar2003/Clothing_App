@@ -8,45 +8,44 @@
 .navbar-nav {
   display: flex;
   gap: 30px;
-  
 }
-.navbar-nav .nav-link{
-    color: var(--primary);
-    font-weight: 500;
-    position: relative;
+.navbar-nav .nav-link {
+  color: var(--primary);
+  font-weight: 500;
+  position: relative;
 }
-.navbar-nav .nav-link::after{
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 2px;
-    background-color: var(--primary);
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transition: all 0.5s ease;
+.navbar-nav .nav-link::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.5s ease;
 }
-.navbar-nav .nav-link:hover::after{
-    width: calc(100% - 10px);
-    left: 5px;
+.navbar-nav .nav-link:hover::after {
+  width: calc(100% - 10px);
+  left: 5px;
 }
-.navbar-nav .nav-link.active{
-    color: var(--secondary);
+.navbar-nav .nav-link.active {
+  color: var(--secondary);
 }
 .icons {
   display: flex;
   gap: 40px;
   align-items: center;
-  margin-bottom: 0 ;
+  margin-bottom: 0;
 }
-.icons span i{
-    font-size: 24px;
-    color: var(--primary);
-    transition: color 0.3s ease;
-    cursor: pointer;
-    &:hover {
-        color: var(--secondary);
-    }
+.icons span i {
+  font-size: 24px;
+  color: var(--primary);
+  transition: color 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    color: var(--secondary);
+  }
 }
 [type="button"]:not(:disabled),
 button:not(:disabled) {
@@ -59,21 +58,29 @@ button:not(:disabled) {
 .navbar-toggler-icon {
   background-image: none;
 }
- .SignUP{
-    background-color: var(--secondary);
-    color: var(--primary);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 15px;
+.SignUP {
+  background-color: var(--secondary);
+  color: var(--primary);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  color: var(--main);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    background-color: var(--primary);
     color: var(--main);
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
-    &:hover {
-        background-color: var(--primary);
-        color: var(--main);
-    }
+  }
 }
-
+.nav-item .name {
+  text-transform: capitalize !important;
+  color: var(--primary);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    color: var(--secondary);
+  }
+}
 .header-fixed {
   position: fixed;
   z-index: 1000;
@@ -84,59 +91,69 @@ button:not(:disabled) {
   transform: translateY(70px);
   transition: all 500ms;
 }
+.logout-icon {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #333; /* Adjust color */
+  margin-left: 10px;
+}
+
+.logout-icon:hover {
+  color: #ff0000; /* Optional hover effect */
+}
 
 /* Responsive */
 
 @media only screen and (max-width: 992px) {
-  .navbar-brand{
+  .navbar-brand {
     width: 100px;
   }
-  .navbar-toggler-icon{
+  .navbar-toggler-icon {
     margin-top: 5px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .navbar-brand{
+  .navbar-brand {
     width: 80px;
   }
-  .navbar-nav{
+  .navbar-nav {
     gap: 18px !important;
   }
 }
 
 @media only screen and (max-width: 576px) {
-  .navbar-brand{
+  .navbar-brand {
     width: 70px;
   }
-  .navbar-nav{
+  .navbar-nav {
     gap: 15px !important;
   }
-  .navbar-toggler-icon{
+  .navbar-toggler-icon {
     margin-top: 8px;
-    i{
+    i {
       font-size: 14px !important;
     }
   }
-  .icons span i{
-    font-size: 18px!important;
+  .icons span i {
+    font-size: 18px !important;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  .navbar-brand{
+  .navbar-brand {
     width: 60px;
   }
-  .navbar-nav{
+  .navbar-nav {
     gap: 13px !important;
   }
-  .nav-link{
+  .nav-link {
     font-size: 12px !important;
   }
-  .icons{
+  .icons {
     gap: 20px !important;
   }
-  .SignUP{
+  .SignUP {
     padding: 5px 10px;
     font-size: 12px;
   }

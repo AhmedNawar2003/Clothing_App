@@ -20,11 +20,13 @@ import BlogWomen from "./Components/Pages/Blog/BlogWomen/BlogWomen";
 import BlogTips from "./Components/Pages/Blog/BlogTips/BlogTips";
 import BlogTree from "./Components/Pages/Blog/BlogTree/BlogTree";
 import BlogRule from "./Components/Pages/Blog/BlogRule/BlogRule";
+import { useState } from "react";
 export default function App() {
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
   let router = createBrowserRouter([
     {
       path: "",
-      element: <Layout />,
+      element: <Layout user={user} setUser={setUser} />,
       children: [
         { path: "/", element: <Home /> },
         { path: "about", element: <About /> },
@@ -41,15 +43,15 @@ export default function App() {
             { path: "beauty", element: <Beauty /> },
           ],
         },
-        { path: "login", element: <Login /> },
-        { path: "register", element: <Register /> },
+        { path: "login", element: <Login setUser={setUser}/> },
+        { path: "register", element: <Register setUser={setUser}/> },
         { path: "wishlist", element: <Wishlist /> },
         { path: "cart", element: <Cart /> },
         { path: "mainblog", element: <MainBlog /> },
         { path: "blogwomen", element: <BlogWomen /> },
         { path: "blogtips", element: <BlogTips /> },
         { path: "blogtree", element: <BlogTree /> },
-        { path:"blogrule", element: <BlogRule /> },
+        { path: "blogrule", element: <BlogRule /> },
       ],
     },
     { path: "*", element: <Error_404 /> },

@@ -1,66 +1,62 @@
 :root {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .logIn {
-    width: 40%;
-    margin: 1.25rem auto;
-    justify-content: center;
-    gap: 0.625rem;
+  width: 40%;
+  margin: 1.25rem auto;
+  justify-content: center;
+  gap: 0.625rem;
 
-    label {
-        margin-inline-start: 0.625rem;
-        font-size: 0.625rem;
+  label {
+    margin-inline-start: 0.625rem;
+    font-size: 0.625rem;
+  }
+
+  input {
+    border-radius: 0;
+    padding: 0.625rem;
+    text-transform: initial !important;
+
+    &:focus {
+      border: 2px solid var(--primary);
+      box-shadow: none;
     }
+  }
 
-    input {
-        border-radius: 0;
-        padding: 0.625rem;
+  p {
+    text-transform: capitalize !important;
+  }
 
-        &:focus {
-            border: 2px solid var(--primary);
-            box-shadow: none;
-        }
-    }
+  .logBtn {
+    background-color: var(--primary);
+    color: var(--main);
+    padding: 20px;
+  }
+
+  .toRegister {
+    text-align: center;
 
     p {
+      text-transform: capitalize !important;
+      font-size: 0.938rem;
+
+      a {
         text-transform: capitalize !important;
+        text-decoration: underline !important;
+        color: var(--primary);
+      }
     }
-
-    .logBtn {
-        background-color: var(--primary);
-        color: var(--main);
-        padding: 20px;
-    }
-
-    .toRegister {
-        text-align: center;
-
-        p {
-            text-transform: capitalize !important;
-            font-size: 0.938rem;
-
-
-            a {
-                text-transform: capitalize !important;
-                text-decoration: underline !important;
-                color: var(--primary);
-            }
-        }
-
-
-    }
-
+  }
 }
-
 
 /* responsive */
 @media screen and (max-width: 400px) {
-    :root {
-        font-size: 12px;
-    }
+  :root {
+    font-size: 12px;
+  }
 }

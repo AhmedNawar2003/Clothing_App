@@ -1,14 +1,15 @@
 import "./Navbar.css";
 import logo from "../../assets/image/logo.webp";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-export default function Navbar() {
-  const [activeLink, setActiveLink] = useState(""); 
-  const location = useLocation(); 
+export default function Navbar({ user, setUser }) {
+  const [activeLink, setActiveLink] = useState("");
+  const location = useLocation();
+  const Navigate = useNavigate();
 
   useEffect(() => {
-    setActiveLink(location.pathname); 
+    setActiveLink(location.pathname);
   }, [location]);
 
   useEffect(() => {
@@ -28,12 +29,24 @@ export default function Navbar() {
     };
   }, []);
 
+  useEffect(() => {
+    // Fetch user data from localStorage
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    setUser(storedUser);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setUser(null);
+    Navigate("/register");
+  };
+
   return (
     <div>
       <header className="header" id="header">
         <nav className="navbar navbar-expand-lg">
           <div className="container">
-            <Link className="navbar-brand" to="">
+            <Link className="navbar-brand" to="/">
               <img src={logo} alt="logo" />
             </Link>
             <button
@@ -105,6 +118,11 @@ export default function Navbar() {
                 </li>
               </ul>
               <ul className="icons">
+                <li className="nav-item">
+                  <span className="nav-link name">
+                    {user ? `Welcome, ${user.username}` : "Guest"}
+                  </span>
+                </li>
                 <li>
                   <span>
                     <i className="fa-brands fa-searchengin"></i>
@@ -134,6 +152,16 @@ export default function Navbar() {
                 <Link to="register">
                   <button className="SignUP">SignUp</button>
                 </Link>
+                {user && (
+                  <li className="nav-item">
+                    <span
+                      className="nav-link logout-icon"
+                      onClick={handleLogout}
+                    >
+                      {user ? "🔓" : "🔒"} {/* Unlock/lock icon */}
+                    </span>
+                  </li>
+                )}
               </ul>
             </div>
           </div>
