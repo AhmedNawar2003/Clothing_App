@@ -4,6 +4,7 @@
 
 .limited {
     text-align: center;
+    justify-content: center;
 
     .header {
         text-align: center;
@@ -18,10 +19,13 @@
     }
 
     .products {
+        justify-content: center;
+
         .item {
             text-align: start;
             border: 1px solid #000;
             margin: 0.625rem;
+            padding: 0;
 
             .img {
                 cursor: pointer;
@@ -54,6 +58,17 @@
 
             }
         }
+
     }
+
+    .director {
+        align-self: center;
+
+        i {
+            cursor: pointer;
+            font-size: 1.875rem;
+        }
+    }
+
 
 }

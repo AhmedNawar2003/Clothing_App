@@ -1,58 +1,41 @@
-import React, { useEffect, useRef } from 'react';
-import Splide from '@splidejs/splide';
-import '@splidejs/splide/dist/css/splide.min.css';
 import './Limited.css';
 
 export default function Limited() {
-    const splideRef = useRef(null);
-
-    useEffect(() => {
-        if (splideRef.current) {
-            new Splide(splideRef.current, {
-                type: 'loop',
-                perPage: 4,
-                perMove: 1,
-            }).mount();
-        }
-    }, []);
 
     return (
         <>
             <section>
                 <div className="container">
-                    <div className="limited">
-                        <div className="header">
+                    <div className="limited row">
+                        <div className="col-12 header">
                             <h2>
                                 limited <span>edition</span>
                             </h2>
                         </div>
-                        <div className="products">
-                            <div ref={splideRef} className="splide">
-                                <div className="splide__track">
-                                    <ul className="splide__list">
-                                        <li className="splide__slide">
-                                            <div className="item">
-                                                <div className="img">
-                                                    <img src="img/image (18).webp" alt="" />
-                                                </div>
-                                                <div className="info">
-                                                    <p className='tag'>dresses</p>
-                                                    <div className="towishlist">
-                                                        <i class="fa-regular fa-heart"></i>
-                                                    </div>
-                                                    <h5 className="name">product name</h5>
-                                                    <div className="price">
-                                                        22 $
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li className="splide__slide"></li>
-                                        <li className="splide__slide"></li>
-                                        <li className="splide__slide"></li>
-                                    </ul>
+                        <div className="col-1 director">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </div>
+                        <div className="col-10 row products">
+                            <div className="col-8 row">
+                                <div className="col-4 item">
+                                    <div className="img">
+                                        <img src="img/image (18).webp" alt="" />
+                                    </div>
+                                    <div className="info">
+                                        <p className="tag">
+                                            dresses
+                                        </p>
+                                        <div className="towishlist">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </div>
+                                        <h5 className="name">Product name</h5>
+                                        <p className="price">22 $</p>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                        <div className="col-1 director">
+                            <i class="fa-solid fa-chevron-right"></i>
                         </div>
                     </div>
                 </div>
