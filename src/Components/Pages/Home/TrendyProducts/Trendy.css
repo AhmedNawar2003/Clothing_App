@@ -1,0 +1,89 @@
+:root {
+    font-size: 16px;
+}
+
+
+.trendy {
+    justify-content: center;
+    margin: auto;
+
+    .header {
+        h2 {
+            span {
+                font-weight: bolder;
+            }
+        }
+    }
+
+    .navBtns {
+        button {
+            background-color: transparent;
+            width: fit-content;
+            padding: 5px;
+            color: var(--primary);
+            font-weight: 500;
+            position: relative;
+            font-size: 0.938rem;
+            margin: 0.625rem;
+
+            .linkBtn {
+                color: var(--primary);
+            }
+
+            &:after {
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 0.125rem;
+                background-color: var(--primary);
+                left: 0;
+                right: 0;
+                bottom: 0;
+                transition: all 0.5s ease;
+            }
+
+            &:hover::after {
+                width: calc(100% - 10px);
+                left: 0.313rem;
+            }
+        }
+    }
+
+    .products {
+        
+    }
+
+    .more {
+        button {
+            background-color: transparent;
+            width: fit-content;
+            padding: 5px;
+            color: var(--primary);
+            font-weight: 500;
+            position: relative;
+            font-size: 0.938rem;
+            margin: 0.625rem;
+
+            .linkBtn {
+                color: var(--primary);
+            }
+
+            &:after {
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 0.125rem;
+                background-color: var(--primary);
+                left: 0;
+                right: 0;
+                bottom: 0;
+                transition: all 0.5s ease;
+            }
+
+            &:hover::after {
+                width: calc(100% - 10px);
+                left: 0.313rem;
+            }
+        }
+    }
+}

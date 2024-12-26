@@ -3,6 +3,7 @@ import Collections from "./Collections/Collections";
 import Service from "./service/service";
 import SpringCollections from "./SpringCollections/SpringCollections";
 import Summer from "./Summer/Summer";
+import Trendy from "./TrendyProducts/Trendy";
 import Tshirts from "./Tshirts/Tshirts";
 import Uomo from "./Uomo/Uomo";
 
@@ -19,6 +20,7 @@ export default function Home() {
       </HelmetProvider>
       <Summer />
       <Collections />
+      <Trendy />
       <SpringCollections
         initialDays={170}
         initialHours={15}
@@ -27,7 +29,7 @@ export default function Home() {
       />
       <Tshirts />
       <Uomo />
-      <Service/>
+      <Service />
     </div>
   );
 }
