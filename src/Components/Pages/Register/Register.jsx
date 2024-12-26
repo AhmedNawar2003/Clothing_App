@@ -2,14 +2,17 @@ import { useState } from "react";
 import "./Register.css";
 import Switchers from "../../Switch_log/Switchers";
 import { useNavigate } from "react-router-dom";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
-export default function Register({setUser}) {
+export default function Register({ setUser }) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false); // State for password visibility
   const Navigate = useNavigate();
+
   const handleRegister = () => {
+    // Validate inputs
     if (!username || !email || !password) {
       alert("Please fill in all fields.");
       return;
@@ -20,19 +23,38 @@ export default function Register({setUser}) {
       return;
     }
 
+    if (password.length < 6) {
+      alert("Password must be at least 6 characters long.");
+      return;
+    }
+
+    // Create user object
     const user = {
       username,
       email,
       password,
     };
 
+    // Save user data in localStorage
     localStorage.setItem("user", JSON.stringify(user));
+
+    // Update parent state with new user
+    setUser(user);
+
     alert("Registration successful!");
     Navigate("/login");
   };
 
   return (
     <>
+      <HelmetProvider>
+        <Helmet>
+          <title>Register</title>
+          <meta name="description" content="Register Page" />
+          <meta property="og:title" content="Register" />
+          <meta property="og:description" content="Register Page" />
+        </Helmet>
+      </HelmetProvider>
       <div className="container">
         <Switchers />
         <div className="row register">
@@ -51,14 +73,14 @@ export default function Register({setUser}) {
             <input
               type="email"
               className="form-control"
-              id="floatingemail"
+              id="floatingEmail"
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <label htmlFor="floatingemail">Email Address *</label>
+            <label htmlFor="floatingEmail">Email Address *</label>
           </div>
-          <div className="form-floating mb-3">
+          <div className="form-floating mb-3 position-relative">
             <input
               type={showPassword ? "text" : "password"}
               className="form-control"
@@ -76,6 +98,7 @@ export default function Register({setUser}) {
                 position: "absolute",
                 right: "20px",
                 top: "15px",
+                userSelect: "none",
               }}
             >
               {showPassword ? "🙈" : "👁️"}
