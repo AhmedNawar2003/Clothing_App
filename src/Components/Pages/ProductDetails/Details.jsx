@@ -1,4 +1,4 @@
-import React from 'react';
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useLocation } from 'react-router-dom';
 import './Details.css';
 
@@ -10,7 +10,15 @@ export default function Details() {
         return <p>Error: Product data is not available</p>;
     }
 
-    return (
+    return <>
+        <HelmetProvider>
+            <Helmet title="Product Details" />
+            <meta name="description" content="Our shop offers a wide range of products" />
+            <meta property="og:title" content="details" />
+            <meta property="og:description" content="Our shop offers a wide range of products" />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://www.graduateproject.com/shop" />
+        </HelmetProvider>
         <section>
             <div className="container">
                 <div className="row details">
@@ -73,5 +81,5 @@ export default function Details() {
                 </div>
             </div>
         </section>
-    );
+    </>
 }
