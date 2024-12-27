@@ -1,0 +1,98 @@
+:root {
+    font-size: 16px;
+}
+
+
+.details {
+    justify-content: center;
+    gap: 0.625rem;
+
+    .info {
+        .name {
+            margin-bottom: 1.25rem;
+        }
+
+        .price {
+            margin-bottom: 1.25rem;
+        }
+
+        .disc {
+            margin: 1.25rem 0rem;
+
+            p {
+                text-transform: capitalize !important;
+            }
+        }
+
+        .spec {
+            justify-content: center;
+
+            .size {
+                h6 {
+                    color: var(--primary);
+                    display: inline;
+                    margin-inline-end: 0.313rem;
+                }
+            }
+
+            .color {
+                h6 {
+                    color: var(--primary);
+                    display: inline;
+                    margin-inline-end: 0.313rem;
+                }
+            }
+        }
+
+        .finilize {
+            justify-content: start;
+            align-items: center;
+            gap: 0.625rem;
+            margin: 1.25rem;
+
+            .count {
+                padding: 1.25rem 0rem;
+                border: 1px solid var(--primary);
+
+                .counter-btn {
+                    padding: 0rem 0.625rem;
+                    background-color: var(--main);
+                }
+
+                .count-value {
+                    font-size: 1.25rem;
+                    padding: 0.625rem;
+                }
+            }
+
+            .addtoCart {
+                padding: 1.25rem;
+                background-color: var(--primary);
+                border-radius: 0;
+                color: var(--main);
+            }
+        }
+
+        .towishlist {
+            margin-bottom: 1.25rem;
+
+            button {
+                background-color: transparent;
+
+                i {
+                    margin-inline-end: 0.313rem;
+                }
+            }
+        }
+
+        .category {
+            text-transform: capitalize !important;
+
+            p {
+                text-transform: capitalize !important;
+                display: inline;
+                margin-inline-start: 0.313rem;
+            }
+        }
+    }
+}

@@ -20,6 +20,7 @@ import BlogWomen from "./Components/Pages/Blog/BlogWomen/BlogWomen";
 import BlogTips from "./Components/Pages/Blog/BlogTips/BlogTips";
 import BlogTree from "./Components/Pages/Blog/BlogTree/BlogTree";
 import BlogRule from "./Components/Pages/Blog/BlogRule/BlogRule";
+import Details from "./Components/Pages/ProductDetails/Details";
 import { useState } from "react";
 export default function App() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
@@ -43,10 +44,11 @@ export default function App() {
             { path: "beauty", element: <Beauty /> },
           ],
         },
-        { path: "login", element: <Login setUser={setUser}/> },
-        { path: "register", element: <Register setUser={setUser}/> },
+        { path: "login", element: <Login setUser={setUser} /> },
+        { path: "register", element: <Register setUser={setUser} /> },
         { path: "wishlist", element: <Wishlist /> },
         { path: "cart", element: <Cart /> },
+        { path: "details", element: <Details /> },
         { path: "mainblog", element: <MainBlog /> },
         { path: "blogwomen", element: <BlogWomen /> },
         { path: "blogtips", element: <BlogTips /> },
