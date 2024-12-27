@@ -1,7 +1,7 @@
 [
     {
         "name": "Cropped Faux Leather Jacket",
-        "image-1": "./img/image (19).webp",
+        "image_1": "./img/image (19).webp",
         "image_2": "./img/image (18).webp",
         "category": "dresses",
         "sub-category": "new",
@@ -14,7 +14,7 @@
     },
     {
         "name": "Calvin Shorts",
-        "image-1": "./img/image (39).webp",
+        "image_1": "./img/image (39).webp",
         "image_2": "./img/image (10).webp",
         "category": "dresses",
         "sub-category": "new",
@@ -27,7 +27,7 @@
     },
     {
         "name": "Kirby T-Shirt",
-        "image-1": "./img/image (28).webp",
+        "image_1": "./img/image (28).webp",
         "image_2": "./img/image (34).webp",
         "category": "dresses",
         "sub-category": "new",
@@ -40,7 +40,7 @@
     },
     {
         "name": "Cableknit Shawl",
-        "image-1": "./img/image (16).webp",
+        "image_1": "./img/image (16).webp",
         "image_2": "./img/image (24).webp",
         "category": "dresses",
         "sub-category": "new",
@@ -53,7 +53,7 @@
     },
     {
         "name": "Colorful Jacket",
-        "image-1": "./img/image (23).webp",
+        "image_1": "./img/image (23).webp",
         "image_2": "./img/image (7).webp",
         "category": "dresses",
         "sub-category": "new",
@@ -66,7 +66,7 @@
     },
     {
         "name": "Shirt In Botanical Cheetah Print",
-        "image-1": "./img/image (35).webp",
+        "image_1": "./img/image (35).webp",
         "image_2": "./img/image (8).webp",
         "category": "dresses",
         "sub-category": "best",
@@ -79,7 +79,7 @@
     },
     {
         "name": "Cotton Jersey T-Shirt",
-        "image-1": "./img/image (20).webp",
+        "image_1": "./img/image (20).webp",
         "image_2": "./img/image (33).webp",
         "category": "dresses",
         "sub-category": "best",
@@ -92,7 +92,7 @@
     },
     {
         "name": "Zessi Dresses",
-        "image-1": "./img/image (40).webp",
+        "image_1": "./img/image (40).webp",
         "image_2": "./img/image (27).webp",
         "category": "dresses",
         "sub-category": "best",
@@ -105,7 +105,7 @@
     },
     {
         "name": "Cropped Faux Leather Jacket",
-        "image-1": "./img/image (5).webp",
+        "image_1": "./img/image (5).webp",
         "image_2": "./img/image (38).webp",
         "category": "dresses",
         "sub-category": "new",
@@ -118,7 +118,7 @@
     },
     {
         "name": "Calvin Shorts",
-        "image-1": "./img/image (5).webp",
+        "image_1": "./img/image (5).webp",
         "image_2": "./img/image (21).webp",
         "category": "dresses",
         "sub-category": "best",
@@ -131,7 +131,7 @@
     },
     {
         "name": "Kirby T-Shirt",
-        "image-1": "./img/image (36).webp",
+        "image_1": "./img/image (36).webp",
         "image_2": "./img/image (15).webp",
         "category": "dresses",
         "sub-category": "best",
@@ -144,7 +144,7 @@
     },
     {
         "name": "Cableknit Shawl",
-        "image-1": "./img/image (22).webp",
+        "image_1": "./img/image (22).webp",
         "image_2": "./img/image (11).webp",
         "category": "dresses",
         "sub-category": "new",
@@ -157,7 +157,7 @@
     },
     {
         "name": "Colorful Jacket",
-        "image-1": "./img/image (13).webp",
+        "image_1": "./img/image (13).webp",
         "image_2": "./img/image (26).webp",
         "category": "dresses",
         "sub-category": "new",
@@ -170,7 +170,7 @@
     },
     {
         "name": "Colorful Jacket",
-        "image-1": "./img/image (13).webp",
+        "image_1": "./img/image (13).webp",
         "image_2": "./img/image (26).webp",
         "category": "dresses",
         "sub-category": "top",
@@ -183,7 +183,7 @@
     },
     {
         "name": "Shirt In Botanical Cheetah Print",
-        "image-1": "./img/image (29).webp",
+        "image_1": "./img/image (29).webp",
         "image_2": "./img/image (25).webp",
         "category": "dresses",
         "sub-category": "best",
@@ -196,7 +196,7 @@
     },
     {
         "name": "Cotton Jersey T-Shirt",
-        "image-1": "./img/image (12).webp",
+        "image_1": "./img/image (12).webp",
         "image_2": "./img/image (17).webp",
         "category": "dresses",
         "sub-category": "top",
@@ -209,7 +209,7 @@
     },
     {
         "name": "Cotton Jersey T-Shirt",
-        "image-1": "./img/image (12).webp",
+        "image_1": "./img/image (12).webp",
         "image_2": "./img/image (17).webp",
         "category": "dresses",
         "sub-category": "top",
@@ -222,7 +222,7 @@
     },
     {
         "name": "Zessi Dresses",
-        "image-1": "./img/image (12).webp",
+        "image_1": "./img/image (12).webp",
         "image_2": "./img/image (37).webp",
         "category": "dresses",
         "sub-category": "top",
@@ -235,7 +235,7 @@
     },
     {
         "name": "Hosking Blue Area Rug",
-        "image-1": "./img/image (42).webp",
+        "image_1": "./img/image (42).webp",
         "image_2": null,
         "category": "dresses",
         "sub-category": "top",
@@ -248,7 +248,7 @@
     },
     {
         "name": "Hanneman Pouf",
-        "image-1": "./img/image (41).webp",
+        "image_1": "./img/image (41).webp",
         "image_2": null,
         "category": "dresses",
         "sub-category": "top",
@@ -261,7 +261,7 @@
     },
     {
         "name": "Cushion Futon Slipcover",
-        "image-1": "./img/image (38).webp",
+        "image_1": "./img/image (43).webp",
         "image_2": null,
         "category": "dresses",
         "sub-category": "top",
@@ -274,7 +274,7 @@
     },
     {
         "name": "Hub Accent Mirror",
-        "image-1": "./img/image (32).webp",
+        "image_1": "./img/image (32).webp",
         "image_2": null,
         "category": "dresses",
         "sub-category": "top",
