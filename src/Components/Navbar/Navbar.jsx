@@ -44,8 +44,8 @@ export default function Navbar({ user, setUser }) {
   };
 
   return (
-    <div>
-      <header className="header" id="header">
+    <>
+      <header className="headerNav" id="header">
         <nav className="navbar navbar-expand-lg">
           <div className="container">
             <Link className="navbar-brand" to="/">
@@ -180,6 +180,6 @@ export default function Navbar({ user, setUser }) {
           </div>
         </nav>
       </header>
-    </div>
+    </>
   );
 }

@@ -50,10 +50,7 @@ export default function Limited() {
                             limited <span>edition</span>
                         </h2>
                     </div>
-                    <div className="col-1 director">
-                        <i className="fa-solid fa-chevron-left" onClick={shiftLeft}></i>
-                    </div>
-                    <div className="row col-10 products">
+                    <div className="row col-12 products">
                         {visibleProducts.map((product, index) => (
                             <div className="col-3 item" key={index}>
                                 <div className="img">
@@ -77,9 +74,12 @@ export default function Limited() {
                             </div>
                         ))}
                     </div>
-                    <div className="col-1 director">
+                    <span className= "director director-right">
                         <i className="fa-solid fa-chevron-right" onClick={shiftRight}></i>
-                    </div>
+                    </span>
+                    <span className= "director director-left">
+                        <i className="fa-solid fa-chevron-left" onClick={shiftLeft}></i>
+                    </span>
                 </div>
             </div>
         </section>

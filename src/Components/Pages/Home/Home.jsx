@@ -7,14 +7,8 @@ import Summer from "./Summer/Summer";
 import Trendy from "./TrendyProducts/Trendy";
 import Tshirts from "./Tshirts/Tshirts";
 import Uomo from "./Uomo/Uomo";
-import AOS from "aos";
-import { useEffect } from "react";
-
+import ShopProduct from "../Shop/ShopProduct";
 export default function Home() {
-  useEffect(() => {
-    AOS.init({ duration: 800 });
-  }, []);
-
   return (
     <div>
       <HelmetProvider>
@@ -23,14 +17,12 @@ export default function Home() {
         <meta name="keywords" content="clothing, store, fashion, shopping" />
         <meta name="author" content="Your Name" />
         <meta property="og:title" content="Home" />
-        <meta
-          property="og:description"
-          content="Welcome to our clothing store!"
-        />
+        <meta property="og:description" content="Welcome to our clothing store!" />
       </HelmetProvider>
       <Summer />
       <Collections />
       <Trendy />
+      <ShopProduct/>
       <SpringCollections
         initialDays={170}
         initialHours={15}
@@ -38,6 +30,7 @@ export default function Home() {
         initialSeconds={59}
       />
       <Tshirts />
+      <Limited />
       <Uomo />
       <Service />
     </div>

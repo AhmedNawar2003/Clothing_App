@@ -25,7 +25,7 @@
         margin: 0;
         padding: 0;
         gap: 5px;
-
+        position: relative;
         .item {
             text-align: start;
             padding: 0;
@@ -98,6 +98,7 @@
     }
 
     .director {
+        position: absolute;
         align-self: center;
         width: fit-content;
 
@@ -107,4 +108,11 @@
         }
     }
 
+}
+.director-right {
+    right: 0;
+}
+
+.director-left {
+    left: 0;
 }
