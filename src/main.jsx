@@ -7,8 +7,25 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import "@splidejs/splide/dist/js/splide.min.js";
 import "aos/dist/aos.css";
 import App from "./App.jsx";
-createRoot(document.getElementById("root")).render(
-  <StrictMode>
-      <App />
-  </StrictMode>
-);
+import { CartProvider } from './Components/CartContext/CartContext.jsx';
+import { WishlistProvider } from './Components/WishlistContext/WishlistContext.jsx'; // Import WishlistProvider
+
+if (process.env.NODE_ENV === 'development') {
+  createRoot(document.getElementById("root")).render(
+    <StrictMode>
+      <CartProvider>
+        <WishlistProvider> 
+          <App />
+        </WishlistProvider>
+      </CartProvider>
+    </StrictMode>
+  );
+} else {
+  createRoot(document.getElementById("root")).render(
+    <CartProvider>
+      <WishlistProvider> 
+        <App />
+      </WishlistProvider>
+    </CartProvider>
+  );
+}

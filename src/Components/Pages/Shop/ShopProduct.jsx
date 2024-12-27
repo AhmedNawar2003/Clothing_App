@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AOS from "aos";
+import { useCart } from "../../CartContext/CartContext.jsx";
 import "./Shop.css";
 
 export default function ShopProduct() {
   const [products, setProducts] = useState([]);
+  const { cartItems, addToCart } = useCart();
   const navigate = useNavigate();
+  const [notification, setNotification] = useState("");
 
   useEffect(() => {
-    AOS.init({ duration: 800 }); // Initialize AOS with a duration of 800ms
+    AOS.init({ duration: 800 });
   }, []);
 
   useEffect(() => {
@@ -27,6 +30,21 @@ export default function ShopProduct() {
     navigate("/Details", { state: { product } });
   };
 
+  const handleAddToCart = (product) => {
+    // Check if product is already in the cart
+    const productExists = cartItems.some((item) => item.id === product.id);
+
+    if (productExists) {
+      setNotification("This product is already in your cart.");
+      setTimeout(() => {
+        setNotification(""); // Hide the notification after 3 seconds
+      }, 3000);
+    } else {
+      // Add product to cart if it doesn't exist
+      addToCart(product);
+    }
+  };
+
   return (
     <>
       <section>
@@ -37,17 +55,13 @@ export default function ShopProduct() {
                 key={product.id}
                 className="col-lg-3 col-md-4 item"
                 data-aos="fade-up"
-                data-aos-delay={index * 10} // Delay for staggered animations
+                data-aos-delay={index * 10}
               >
                 <div className="card m-3">
                   {product.sale && <div className="sale">SALE</div>}
                   {product.new && <div className="new">NEW</div>}
 
-                  <div
-                    className="img"
-                    onClick={() => handleProductClick(product)}
-                    data-aos="zoom-in"
-                  >
+                  <div className="img" data-aos="zoom-in">
                     <img
                       className="firstImage"
                       src={product.image_1}
@@ -58,16 +72,17 @@ export default function ShopProduct() {
                       src={product.image_2}
                       alt={product.name}
                     />
-                    <button className="addtoCart" data-aos="fade-up">
+                    <button
+                      className="addtoCart"
+                      data-aos="fade-up"
+                      onClick={() => handleAddToCart(product)}
+                    >
                       Add to Cart
                     </button>
                   </div>
 
                   <div className="info" data-aos="fade-in">
-                    <p
-                      className="tag"
-                      onClick={() => handleProductClick(product)}
-                    >
+                    <p className="tag" onClick={() => handleProductClick(product)}>
                       {product.category}
                     </p>
                     <h5
@@ -84,10 +99,6 @@ export default function ShopProduct() {
                     ) : (
                       <p className="price">${product.price}</p>
                     )}
-
-                    <div className="towishlist" data-aos="flip-left">
-                      <i className="fa-regular fa-heart"></i>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -95,6 +106,12 @@ export default function ShopProduct() {
           </div>
         </div>
       </section>
+
+      {notification && (
+        <div className="notification">
+          {notification}
+        </div>
+      )}
     </>
   );
 }

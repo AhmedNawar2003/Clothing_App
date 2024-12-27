@@ -22,6 +22,7 @@ import BlogTree from "./Components/Pages/Blog/BlogTree/BlogTree";
 import BlogRule from "./Components/Pages/Blog/BlogRule/BlogRule";
 import Details from "./Components/Pages/ProductDetails/Details";
 import { useState } from "react";
+import { WishlistProvider } from "./Components/WishlistContext/WishlistContext";
 export default function App() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
   let router = createBrowserRouter([
@@ -46,7 +47,12 @@ export default function App() {
         },
         { path: "login", element: <Login setUser={setUser} /> },
         { path: "register", element: <Register setUser={setUser} /> },
-        { path: "wishlist", element: <Wishlist /> },
+        {
+          path: "wishlist",
+          element: (
+              <Wishlist />
+          ),
+        },
         { path: "cart", element: <Cart /> },
         { path: "details", element: <Details /> },
         { path: "mainblog", element: <MainBlog /> },

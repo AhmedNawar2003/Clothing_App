@@ -2,11 +2,15 @@ import "./Navbar.css";
 import logo from "../../assets/image/logo.webp";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useCart } from "../CartContext/CartContext.jsx";
+import { useWishlist } from "../WishlistContext/WishlistContext.jsx"; // Import WishlistContext
 
 export default function Navbar({ user, setUser }) {
   const [activeLink, setActiveLink] = useState("");
   const location = useLocation();
   const Navigate = useNavigate();
+  const { cartItems } = useCart();
+  const { wishlistItems } = useWishlist(); // Access wishlistItems from WishlistContext
 
   // Track active link based on location
   useEffect(() => {
@@ -40,146 +44,131 @@ export default function Navbar({ user, setUser }) {
   const handleLogout = () => {
     localStorage.removeItem("user");
     setUser(null);
-    Navigate("/register");
+    Navigate("/login"); // Redirect to login instead of register
   };
 
   return (
-    <>
-      <header className="headerNav" id="header">
-        <nav className="navbar navbar-expand-lg">
-          <div className="container">
-            <Link className="navbar-brand" to="/">
-              <img src={logo} alt="logo" />
-            </Link>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon">
-                <i className="fa-solid fa-bars"></i>
-              </span>
-            </button>
-            <div
-              className="collapse navbar-collapse"
-              id="navbarSupportedContent"
-            >
-              {user && (
-                <ul className="navbar-nav m-auto mb-2 mb-lg-0">
-                  <li className="nav-item">
-                    <Link
-                      className={`nav-link ${
-                        activeLink === "/" ? "active" : ""
-                      }`}
-                      aria-current="page"
-                      to="/"
-                    >
-                      Home
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      className={`nav-link ${
-                        activeLink === "/shop" ? "active" : ""
-                      }`}
-                      to="/shop"
-                    >
-                      Shop
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      className={`nav-link ${
-                        activeLink === "/blog" ? "active" : ""
-                      }`}
-                      to="/blog"
-                    >
-                      Blog
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      className={`nav-link ${
-                        activeLink === "/about" ? "active" : ""
-                      }`}
-                      to="/about"
-                    >
-                      About
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      className={`nav-link ${
-                        activeLink === "/contact" ? "active" : ""
-                      }`}
-                      to="/contact"
-                    >
-                      Contact
-                    </Link>
-                  </li>
-                </ul>
-              )}
-              <ul className="icons">
+    <header className="headerNav" id="header">
+      <nav className="navbar navbar-expand-lg">
+        <div className="container">
+          <Link className="navbar-brand" to="/">
+            <img src={logo} alt="logo" />
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon">
+              <i className="fa-solid fa-bars"></i>
+            </span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            {user && (
+              <ul className="navbar-nav m-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <span className="nav-link name">
-                    {user ? `Welcome, ${user.username}` : "Guest"}
-                  </span>
+                  <Link
+                    className={`nav-link ${activeLink === "/" ? "active" : ""}`}
+                    aria-current="page"
+                    to="/"
+                  >
+                    Home
+                  </Link>
                 </li>
-                {!user && (
-                  <>
-                    <li>
-                      <Link to="login">
-                        <span>
-                          <i className="fa-solid fa-user"></i>
-                        </span>
-                      </Link>
-                    </li>
-
-                    <Link to="register">
-                      <button className="SignUP">SignUp</button>
-                    </Link>
-                  </>
-                )}
-                {user && (
-                  <>
-                    <li>
-                      <span>
-                        <i className="fa-brands fa-searchengin"></i>
-                      </span>
-                    </li>
-                    <li>
-                      <Link to="wishlist">
-                        <span>
-                          <i className="fa-regular fa-heart"></i>
-                        </span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="cart">
-                        <span>
-                          <i className="fa-solid fa-shopping-cart"></i>
-                        </span>
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <span
-                        className="nav-link logout-icon"
-                        onClick={handleLogout}
-                      >
-                        <i className="fa-solid fa-right-from-bracket"></i>
-                      </span>
-                    </li>
-                  </>
-                )}
+                <li className="nav-item">
+                  <Link
+                    className={`nav-link ${activeLink === "/shop" ? "active" : ""}`}
+                    to="/shop"
+                  >
+                    Shop
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className={`nav-link ${activeLink === "/blog" ? "active" : ""}`}
+                    to="/blog"
+                  >
+                    Blog
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className={`nav-link ${activeLink === "/about" ? "active" : ""}`}
+                    to="/about"
+                  >
+                    About
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className={`nav-link ${activeLink === "/contact" ? "active" : ""}`}
+                    to="/contact"
+                  >
+                    Contact
+                  </Link>
+                </li>
               </ul>
-            </div>
+            )}
+            <ul className="icons">
+              <li className="nav-item">
+                <span className="nav-link name">
+                  {user ? `Welcome, ${user.username}` : "Guest"}
+                </span>
+              </li>
+              {!user && (
+                <>
+                  <li>
+                    <Link to="login">
+                      <span>
+                        <i className="fa-solid fa-user"></i>
+                      </span>
+                    </Link>
+                  </li>
+                  <Link to="register">
+                    <button className="SignUP">SignUp</button>
+                  </Link>
+                </>
+              )}
+              {user && (
+                <>
+                  <li>
+                    <span>
+                      <i className="fa-brands fa-searchengin"></i>
+                    </span>
+                  </li>
+                  <li>
+                    <Link to="wishlist">
+                      <span className="spanCircle wishlistSpan">
+                        {wishlistItems.length || 0}
+                      </span>
+                      <span className="spanIcon">
+                        <i className="fa-regular fa-heart"></i>
+                      </span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="cart">
+                      <span className="spanCircle cartSpan">{cartItems?.length || 0}</span>
+                      <span className="spanIcon">
+                        <i className="fa-solid fa-shopping-cart"></i>
+                      </span>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <span className="nav-link logout-icon" onClick={handleLogout}>
+                      <i className="fa-solid fa-right-from-bracket"></i>
+                    </span>
+                  </li>
+                </>
+              )}
+            </ul>
           </div>
-        </nav>
-      </header>
-    </>
+        </div>
+      </nav>
+    </header>
   );
 }

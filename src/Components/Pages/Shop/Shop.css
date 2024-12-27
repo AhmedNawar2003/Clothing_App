@@ -91,7 +91,7 @@
     }
 
     .img {
-      height: 450px ;
+      height: 450px;
       position: relative;
       cursor: pointer;
       text-align: center;
@@ -173,5 +173,33 @@
         cursor: pointer;
       }
     }
+  }
+}
+.notification {
+  position: fixed;
+  top: 0; /* Position it directly below the navbar */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Offset for perfect centering */
+  background-color: #4caf50; /* Green background */
+  color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999; /* Ensure it's above other elements but below the navbar */
+  font-size: 1rem;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+/* Fade in and out animation */
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px); /* Starts from below */
+  }
+  10%,
+  90% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0); /* Comes to its place */
   }
 }

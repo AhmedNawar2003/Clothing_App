@@ -116,3 +116,7 @@
 .director-left {
     left: 0;
 }
+.towishlist i.liked {
+    color: red; /* You can change this to your desired color */
+  }
+  

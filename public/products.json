@@ -1,5 +1,6 @@
 [
-    {
+    {   
+        "id":1,
         "name": "Cropped Faux Leather Jacket",
         "image_1": "./img/image (19).webp",
         "image_2": "./img/image (18).webp",
@@ -13,6 +14,7 @@
         "new": true
     },
     {
+        "id":2,
         "name": "Calvin Shorts",
         "image_1": "./img/image (39).webp",
         "image_2": "./img/image (10).webp",
@@ -26,6 +28,7 @@
         "new": false
     },
     {
+        "id":3,
         "name": "Kirby T-Shirt",
         "image_1": "./img/image (28).webp",
         "image_2": "./img/image (34).webp",
@@ -38,7 +41,8 @@
         "sale": false,
         "new": false
     },
-    {
+    {   
+        "id":4,
         "name": "Cableknit Shawl",
         "image_1": "./img/image (16).webp",
         "image_2": "./img/image (24).webp",
@@ -52,6 +56,7 @@
         "new": true
     },
     {
+        "id":5,
         "name": "Colorful Jacket",
         "image_1": "./img/image (23).webp",
         "image_2": "./img/image (7).webp",
@@ -65,6 +70,7 @@
         "new": false
     },
     {
+        "id":6,
         "name": "Shirt In Botanical Cheetah Print",
         "image_1": "./img/image (35).webp",
         "image_2": "./img/image (8).webp",
@@ -78,6 +84,7 @@
         "new": true
     },
     {
+        "id":7,
         "name": "Cotton Jersey T-Shirt",
         "image_1": "./img/image (20).webp",
         "image_2": "./img/image (33).webp",
@@ -91,6 +98,7 @@
         "new": false
     },
     {
+        "id":8,
         "name": "Zessi Dresses",
         "image_1": "./img/image (40).webp",
         "image_2": "./img/image (27).webp",
@@ -104,6 +112,7 @@
         "new": false
     },
     {
+        "id":9,
         "name": "Cropped Faux Leather Jacket",
         "image_1": "./img/image (6).webp",
         "image_2": "./img/image (38).webp",
@@ -117,6 +126,7 @@
         "new": false
     },
     {
+        "id":10,
         "name": "Calvin Shorts",
         "image_1": "./img/image (5).webp",
         "image_2": "./img/image (21).webp",
@@ -130,6 +140,7 @@
         "new": true
     },
     {
+        "id":11,
         "name": "Kirby T-Shirt",
         "image_1": "./img/image (36).webp",
         "image_2": "./img/image (15).webp",
@@ -143,6 +154,7 @@
         "new": false
     },
     {
+        "id":12,
         "name": "Cableknit Shawl",
         "image_1": "./img/image (22).webp",
         "image_2": "./img/image (11).webp",
@@ -156,6 +168,7 @@
         "new": false
     },
     {
+        "id":13,
         "name": "Colorful Jacket",
         "image_1": "./img/image (13).webp",
         "image_2": "./img/image (26).webp",
@@ -169,6 +182,7 @@
         "new": false
     },
     {
+        "id":14,
         "name": "Shirt In Botanical Cheetah Print",
         "image_1": "./img/image (29).webp",
         "image_2": "./img/image (25).webp",
@@ -182,6 +196,7 @@
         "new": true
     },
     {
+        "id":15,
         "name": "Cotton Jersey T-Shirt",
         "image_1": "./img/image (12).webp",
         "image_2": "./img/image (17).webp",
@@ -195,6 +210,7 @@
         "new": false
     },
     {
+        "id":15,
         "name": "Hosking Blue Area Rug",
         "image_1": "./img/image (42).webp",
         "image_2": null,
@@ -208,6 +224,7 @@
         "new": false
     },
     {
+        "id":16,
         "name": "Hanneman Pouf",
         "image_1": "./img/image (41).webp",
         "image_2": null,
@@ -221,6 +238,7 @@
         "new": false
     },
     {
+        "id":17,
         "name": "Cushion Futon Slipcover",
         "image_1": "./img/image (43).webp",
         "image_2": null,
@@ -234,6 +252,7 @@
         "new": false
     },
     {
+        "id":18,
         "name": "Hub Accent Mirror",
         "image_1": "./img/image (32).webp",
         "image_2": null,
