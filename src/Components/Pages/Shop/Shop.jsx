@@ -36,7 +36,6 @@ export default function Shop() {
       <section>
         <div className="header">
           <div className="img">
-            <img src="img/image (44).webp" alt="" />
             <div className="inside">
               <h1>Jakets & coats</h1>
               <button className="btn">All</button>
@@ -48,6 +47,7 @@ export default function Shop() {
               <button className="btn">Accessories</button>
               <button className="btn">Shoes</button>
             </div>
+            <img src="img/image (44).webp" alt="" />
           </div>
         </div>
 
