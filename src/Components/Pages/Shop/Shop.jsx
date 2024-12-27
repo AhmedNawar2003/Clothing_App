@@ -50,44 +50,46 @@ export default function Shop() {
             <img src="img/image (44).webp" alt="" />
           </div>
         </div>
-        <div className="row products">
-          {products.map((product) => (
-            <div key={product.id} className="col-3 item">
+        <div className="container">
+          <div className="row products">
+            {products.map((product) => (
+              <div key={product.id} className="col-3 item">
 
-              {product.sale && <div className="sale">sale</div>}
-              {product.new && <div className="new">new</div>}
+                {product.sale && <div className="sale">SALE</div>}
+                {product.new && <div className="new">NEW</div>}
 
-              <div className="img" onClick={() => handleProductClick(product)}>
-                <img className="firstImage"
-                  src={product.image_1}
-                  alt={product.name}
-                />
-                <img className="seccondImage"
-                  src={product.image_2}
-                  alt={product.name} />
-                <button className="addtoCart">add to cart</button>
-              </div>
+                <div className="img" onClick={() => handleProductClick(product)}>
+                  <img className="firstImage"
+                    src={product.image_1}
+                    alt={product.name}
+                  />
+                  <img className="seccondImage"
+                    src={product.image_2}
+                    alt={product.name} />
+                  <button className="addtoCart">Add to Cart</button>
+                </div>
 
-              <div className="info">
-                <p className="tag" onClick={() => handleProductClick(product)}>{product.category}</p>
-                <h5 className="name" onClick={() => handleProductClick(product)}>{product.name}</h5>
+                <div className="info">
+                  <p className="tag" onClick={() => handleProductClick(product)}>{product.category}</p>
+                  <h5 className="name" onClick={() => handleProductClick(product)}>{product.name}</h5>
 
-  
-                {product.sale ? (
-                  <p className="price">
-                    <del>${product.price}</del> ${product.discounted_price}
-                  </p>
-                ) : (
-                  <p className="price">${product.price}</p>
-                )}
+                  {product.sale ? (
+                    <p className="price">
+                      <del>${product.price}</del> ${product.disocunted_price}
+                    </p>
+                  ) : (
+                    <p className="price">${product.price}</p>
+                  )}
 
-                <div className="towishlist">
-                  <i className="fa-regular fa-heart"></i>
+                  <div className="towishlist">
+                    <i className="fa-regular fa-heart"></i>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
 
+
+          </div>
         </div>
       </section >
     </>

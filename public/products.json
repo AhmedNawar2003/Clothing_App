@@ -10,7 +10,7 @@
         "disocunted_price": null,
         "limited-edition": false,
         "sale": false,
-        "new": false
+        "new": true
     },
     {
         "name": "Calvin Shorts",
@@ -75,7 +75,7 @@
         "disocunted_price": null,
         "limited-edition": false,
         "sale": false,
-        "new": false
+        "new": true
     },
     {
         "name": "Cotton Jersey T-Shirt",
@@ -127,7 +127,7 @@
         "disocunted_price": null,
         "limited-edition": false,
         "sale": false,
-        "new": false
+        "new": true
     },
     {
         "name": "Kirby T-Shirt",
@@ -179,7 +179,7 @@
         "disocunted_price": null,
         "limited-edition": false,
         "sale": false,
-        "new": false
+        "new": true
     },
     {
         "name": "Cotton Jersey T-Shirt",

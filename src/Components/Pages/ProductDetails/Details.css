@@ -59,18 +59,17 @@
             margin: 1.25rem;
 
             .count {
-
                 padding: 1.25rem;
+                text-align: center;
                 border: 1px solid var(--primary);
 
                 .counter-btn {
-                    padding: 0rem 0.625rem;
                     background-color: var(--main);
                 }
 
                 .count-value {
                     font-size: 1.25rem;
-                    padding: 0.625rem;
+                    margin: 0rem 1.25rem;
                 }
             }
 
