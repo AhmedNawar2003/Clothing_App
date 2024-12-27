@@ -7,7 +7,7 @@
         "sub-category": "new",
         "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
         "price": 29,
-        "disocunted-price": null,
+        "disocunted_price": null,
         "limited-edition": false,
         "sale": false,
         "new": false
@@ -20,7 +20,7 @@
         "sub-category": "new",
         "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
         "price": 62,
-        "disocunted-price": null,
+        "disocunted_price": null,
         "limited-edition": false,
         "sale": false,
         "new": false
@@ -33,7 +33,7 @@
         "sub-category": "new",
         "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
         "price": 17,
-        "disocunted-price": null,
+        "disocunted_price": null,
         "limited-edition": false,
         "sale": false,
         "new": false
@@ -46,7 +46,7 @@
         "sub-category": "new",
         "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
         "price": 129,
-        "disocunted-price": 99,
+        "disocunted_price": 99,
         "limited-edition": false,
         "sale": true,
         "new": true
@@ -59,7 +59,7 @@
         "sub-category": "new",
         "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
         "price": 29,
-        "disocunted-price": null,
+        "disocunted_price": null,
         "limited-edition": false,
         "sale": false,
         "new": false
@@ -72,7 +72,7 @@
         "sub-category": "best",
         "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
         "price": 62,
-        "disocunted-price": null,
+        "disocunted_price": null,
         "limited-edition": false,
         "sale": false,
         "new": false
@@ -85,7 +85,7 @@
         "sub-category": "best",
         "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
         "price": 17,
-        "disocunted-price": null,
+        "disocunted_price": null,
         "limited-edition": false,
         "sale": false,
         "new": false
@@ -98,7 +98,7 @@
         "sub-category": "best",
         "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
         "price": 129,
-        "disocunted-price": 99,
+        "disocunted_price": 99,
         "limited-edition": false,
         "sale": true,
         "new": false
@@ -111,7 +111,7 @@
         "sub-category": "new",
         "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
         "price": 29,
-        "disocunted-price": null,
+        "disocunted_price": null,
         "limited-edition": false,
         "sale": false,
         "new": false
@@ -124,7 +124,7 @@
         "sub-category": "best",
         "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
         "price": 62,
-        "disocunted-price": null,
+        "disocunted_price": null,
         "limited-edition": false,
         "sale": false,
         "new": false
@@ -137,7 +137,7 @@
         "sub-category": "best",
         "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
         "price": 17,
-        "disocunted-price": null,
+        "disocunted_price": null,
         "limited-edition": false,
         "sale": false,
         "new": false
@@ -150,7 +150,7 @@
         "sub-category": "new",
         "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
         "price": 129,
-        "disocunted-price": 99,
+        "disocunted_price": 99,
         "limited-edition": false,
         "sale": true,
         "new": false
@@ -163,7 +163,7 @@
         "sub-category": "new",
         "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
         "price": 29,
-        "disocunted-price": null,
+        "disocunted_price": null,
         "limited-edition": false,
         "sale": false,
         "new": false
@@ -176,7 +176,7 @@
         "sub-category": "best",
         "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
         "price": 62,
-        "disocunted-price": null,
+        "disocunted_price": null,
         "limited-edition": false,
         "sale": false,
         "new": false
@@ -189,7 +189,7 @@
         "sub-category": "top",
         "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
         "price": 17,
-        "disocunted-price": null,
+        "disocunted_price": null,
         "limited-edition": false,
         "sale": false,
         "new": false
@@ -202,7 +202,7 @@
         "sub-category": "top",
         "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
         "price": 29,
-        "disocunted-price": null,
+        "disocunted_price": null,
         "limited-edition": true,
         "sale": false,
         "new": false
@@ -215,7 +215,7 @@
         "sub-category": "top",
         "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
         "price": 62,
-        "disocunted-price": null,
+        "disocunted_price": null,
         "limited-edition": true,
         "sale": false,
         "new": false
@@ -228,7 +228,7 @@
         "sub-category": "top",
         "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
         "price": 62,
-        "disocunted-price": null,
+        "disocunted_price": null,
         "limited-edition": true,
         "sale": false,
         "new": false
@@ -241,7 +241,7 @@
         "sub-category": "top",
         "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
         "price": 17,
-        "disocunted-price": null,
+        "disocunted_price": null,
         "limited-edition": true,
         "sale": false,
         "new": false
