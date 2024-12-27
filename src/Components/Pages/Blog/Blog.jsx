@@ -1,5 +1,5 @@
 import BlogLinks from "./BlogLinks/BlogLinks";
-import './Blog.css';
+import "./Blog.css";
 import { Outlet, useLocation } from "react-router-dom";
 import WomenBlog from "./WomenBlog/WomenBlog";
 import TipsBlog from "./TipsBlog/TipsBlog";
@@ -18,10 +18,19 @@ export default function Blog() {
       <HelmetProvider>
         <Helmet>
           <title>Blog</title>
-          <meta name="description" content="Discover the latest news, tips, and blog posts from our team." />
-          <meta name="keywords" content="blog, news, tips, women's fashion, men's fashion, accessories, travel, fashion, design" />
+          <meta
+            name="description"
+            content="Discover the latest news, tips, and blog posts from our team."
+          />
+          <meta
+            name="keywords"
+            content="blog, news, tips, women's fashion, men's fashion, accessories, travel, fashion, design"
+          />
           <meta property="og:title" content="Blog" />
-          <meta property="og:description" content="Discover the latest news, tips, and blog posts from our team." />
+          <meta
+            property="og:description"
+            content="Discover the latest news, tips, and blog posts from our team."
+          />
         </Helmet>
       </HelmetProvider>
       <BlogLinks />
@@ -33,7 +42,7 @@ export default function Blog() {
               <>
                 <WomenBlog />
                 <TipsBlog />
-                <TreeBlog/>
+                <TreeBlog />
                 <RuleBlog />
               </>
             )}

@@ -102,6 +102,7 @@ button:not(:disabled) {
   color: #ff0000; /* Optional hover effect */
 }
 
+
 /* Responsive */
 
 @media only screen and (max-width: 992px) {
@@ -136,7 +137,10 @@ button:not(:disabled) {
     }
   }
   .icons span i {
-    font-size: 18px !important;
+    font-size: 12px !important;
+  }
+  .nav-item .name{
+    font-size: 15px !important;
   }
 }
 
@@ -148,13 +152,17 @@ button:not(:disabled) {
     gap: 13px !important;
   }
   .nav-link {
-    font-size: 12px !important;
+    font-size: 10px !important;
   }
   .icons {
     gap: 20px !important;
   }
   .SignUP {
-    padding: 5px 10px;
-    font-size: 12px;
+    padding: 5px 10px !important;
+    font-size: 12px !important;
   }
+  .nav-item .name{
+    font-size: 12px !important;
+  }
+
 }

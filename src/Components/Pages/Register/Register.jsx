@@ -38,9 +38,6 @@ export default function Register({ setUser }) {
     // Save user data in localStorage
     localStorage.setItem("user", JSON.stringify(user));
 
-    // Update parent state with new user
-    setUser(user);
-
     alert("Registration successful!");
     Navigate("/login");
   };

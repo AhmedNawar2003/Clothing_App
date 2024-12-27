@@ -9,12 +9,31 @@ export default function Login({ setUser }) {
   const [password, setPassword] = useState("");
   const Navigate = useNavigate();
 
+  const validateEmail = (email) => {
+    const emailRegex = /^\S+@\S+\.\S+$/;
+    return emailRegex.test(email);
+  };
+
   const handleLogin = () => {
+    if (!email || !password) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
     // Fetch user data from localStorage
     const storedUser = JSON.parse(localStorage.getItem("user"));
 
+    if (!storedUser) {
+      alert("No user found. Please register first.");
+      return;
+    }
+
     if (
-      storedUser &&
       storedUser.email === email &&
       storedUser.password === password
     ) {
@@ -29,7 +48,7 @@ export default function Login({ setUser }) {
       // Navigate to the homepage
       Navigate("/");
     } else {
-      alert("Invalid email or password");
+      alert("Invalid email or password. Please try again.");
     }
   };
 

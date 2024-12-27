@@ -1,18 +1,18 @@
 @media screen and (max-width: 992px) {
   .aboutUomo h2 {
-    font-size: 30px;
+    font-size: 30px !important;
   }
   .Company .imgCard {
-    align-items: center;
+    align-items: center !important;
   }
   .Company .card img {
-    width: 350px;
+    width: 350px !important;
   }
 }
 
 @media screen and (max-width: 768px) {
   .aboutUomo h2 {
-    font-size: 20px;
+    font-size: 20px !important;
   }
   .Company .card img {
     width: 250px !important;
@@ -35,7 +35,7 @@
 
 @media screen and (max-width: 576px) {
   .aboutUomo h2 {
-    font-size: 16px;
+    font-size: 16px !important;
   }
   .Company .card img {
     width: 200px !important;

@@ -2,9 +2,17 @@ import AboutUomo from "./AboutUomo/AboutUomo";
 import Company from "./Company/Company";
 import MissionVersion from "./MissionVersion/MissionVersion";
 import OurStory from "./OurStory/OurStory";
-import Service from "../Home/Service/Service";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import Service from "../Home/service/service";
+
 export default function About() {
+  useEffect(() => {
+    AOS.init({ duration: 800 }); // Initialize AOS with animation duration
+  }, []);
+
   return (
     <div>
       <HelmetProvider>
@@ -13,11 +21,22 @@ export default function About() {
           <meta name="description" content="About our company" />
         </Helmet>
       </HelmetProvider>
-      <AboutUomo />
-      <OurStory />
-      <MissionVersion />
-      <Company />
-      <Service />
+
+      <div data-aos="fade-up">
+        <AboutUomo />
+      </div>
+      <div data-aos="fade-left">
+        <OurStory />
+      </div>
+      <div data-aos="fade-right">
+        <MissionVersion />
+      </div>
+      <div data-aos="zoom-in">
+        <Company />
+      </div>
+      <div data-aos="fade-up">
+        <Service />
+      </div>
     </div>
   );
 }
