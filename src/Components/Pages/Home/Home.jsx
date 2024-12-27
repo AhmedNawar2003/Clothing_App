@@ -8,31 +8,62 @@ import Trendy from "./TrendyProducts/Trendy";
 import Tshirts from "./Tshirts/Tshirts";
 import Uomo from "./Uomo/Uomo";
 import ShopProduct from "../Shop/ShopProduct";
+import AOS from "aos";
+import { useEffect } from "react";
+
 export default function Home() {
+  useEffect(() => {
+    AOS.init({ duration: 1500 }); // Initialize AOS with animation duration
+  }, []);
+
   return (
     <div>
       <HelmetProvider>
-        <Helmet title="Home" />
-        <meta name="description" content="Welcome to our clothing store!" />
-        <meta name="keywords" content="clothing, store, fashion, shopping" />
-        <meta name="author" content="Your Name" />
-        <meta property="og:title" content="Home" />
-        <meta property="og:description" content="Welcome to our clothing store!" />
+        <Helmet>
+          <title>Home</title>
+          <meta name="description" content="Welcome to our clothing store!" />
+          <meta name="keywords" content="clothing, store, fashion, shopping" />
+          <meta name="author" content="Your Name" />
+          <meta property="og:title" content="Home" />
+          <meta
+            property="og:description"
+            content="Welcome to our clothing store!"
+          />
+        </Helmet>
       </HelmetProvider>
-      <Summer />
-      <Collections />
-      <Trendy />
-      <ShopProduct/>
-      <SpringCollections
-        initialDays={170}
-        initialHours={15}
-        initialMinutes={50}
-        initialSeconds={59}
-      />
-      <Tshirts />
-      <Limited />
-      <Uomo />
-      <Service />
+
+      <div data-aos="fade-up">
+        <Summer />
+      </div>
+      <div data-aos="fade-left">
+        <Collections />
+      </div>
+      <div data-aos="fade-right">
+        <Trendy />
+      </div>
+      <div data-aos="zoom-in">
+        <ShopProduct />
+      </div>
+      <div data-aos="fade-up">
+        <SpringCollections
+          initialDays={170}
+          initialHours={15}
+          initialMinutes={50}
+          initialSeconds={59}
+        />
+      </div>
+      <div data-aos="fade-left">
+        <Tshirts />
+      </div>
+      <div data-aos="flip-right">
+        <Limited />
+      </div>
+      <div data-aos="fade-down">
+        <Uomo />
+      </div>
+      <div data-aos="flip-left">
+        <Service />
+      </div>
     </div>
   );
 }
