@@ -1,5 +1,6 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Collections from "./Collections/Collections";
+import Limited from "./LimitedEdition/Limited";
 import Service from "./service/service";
 import SpringCollections from "./SpringCollections/SpringCollections";
 import Summer from "./Summer/Summer";
@@ -27,33 +28,18 @@ export default function Home() {
           content="Welcome to our clothing store!"
         />
       </HelmetProvider>
-
-      <div data-aos="fade-up">
-        <Summer />
-      </div>
-      <div data-aos="fade-left">
-        <Collections />
-      </div>
-      <div data-aos="fade-right">
-        <Trendy />
-      </div>
-      <div data-aos="zoom-in">
-        <SpringCollections
-          initialDays={170}
-          initialHours={15}
-          initialMinutes={50}
-          initialSeconds={59}
-        />
-      </div>
-      <div data-aos="fade-up">
-        <Tshirts />
-      </div>
-      <div data-aos="fade-down">
-        <Uomo />
-      </div>
-      <div data-aos="flip-left">
-        <Service />
-      </div>
+      <Summer />
+      <Collections />
+      <Trendy />
+      <SpringCollections
+        initialDays={170}
+        initialHours={15}
+        initialMinutes={50}
+        initialSeconds={59}
+      />
+      <Tshirts />
+      <Uomo />
+      <Service />
     </div>
   );
 }
