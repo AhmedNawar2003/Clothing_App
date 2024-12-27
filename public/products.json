@@ -105,7 +105,7 @@
     },
     {
         "name": "Cropped Faux Leather Jacket",
-        "image_1": "./img/image (5).webp",
+        "image_1": "./img/image (6).webp",
         "image_2": "./img/image (38).webp",
         "category": "dresses",
         "sub-category": "new",
@@ -169,19 +169,6 @@
         "new": false
     },
     {
-        "name": "Colorful Jacket",
-        "image_1": "./img/image (13).webp",
-        "image_2": "./img/image (26).webp",
-        "category": "dresses",
-        "sub-category": "top",
-        "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
-        "price": 29,
-        "disocunted-price": null,
-        "limited-edition": false,
-        "sale": false,
-        "new": false
-    },
-    {
         "name": "Shirt In Botanical Cheetah Print",
         "image_1": "./img/image (29).webp",
         "image_2": "./img/image (25).webp",
@@ -203,32 +190,6 @@
         "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
         "price": 17,
         "disocunted-price": null,
-        "limited-edition": false,
-        "sale": false,
-        "new": false
-    },
-    {
-        "name": "Cotton Jersey T-Shirt",
-        "image_1": "./img/image (12).webp",
-        "image_2": "./img/image (17).webp",
-        "category": "dresses",
-        "sub-category": "top",
-        "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
-        "price": 17,
-        "disocunted-price": null,
-        "limited-edition": false,
-        "sale": false,
-        "new": false
-    },
-    {
-        "name": "Zessi Dresses",
-        "image_1": "./img/image (12).webp",
-        "image_2": "./img/image (37).webp",
-        "category": "dresses",
-        "sub-category": "top",
-        "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.",
-        "price": 129,
-        "disocunted-price": 99,
         "limited-edition": false,
         "sale": false,
         "new": false
