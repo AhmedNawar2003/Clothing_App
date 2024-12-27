@@ -34,6 +34,23 @@ export default function Shop() {
       </HelmetProvider>
 
       <section>
+        <div className="header">
+          <div className="img">
+            <img src="img/image (44).webp" alt="" />
+            <div className="inside">
+              <h1>Jakets & coats</h1>
+              <button className="btn">All</button>
+              <button className="btn">StayHome</button>
+              <button className="btn">Jackets</button>
+              <button className="btn">hoodies</button>
+              <button className="btn">men</button>
+              <button className="btn">women</button>
+              <button className="btn">Accessories</button>
+              <button className="btn">Shoes</button>
+            </div>
+          </div>
+        </div>
+
         <div className="container">
           <div className="row products">
             {products.map((product) => (
@@ -60,7 +77,7 @@ export default function Shop() {
             ))}
           </div>
         </div>
-      </section>
+      </section >
     </>
   );
 }
