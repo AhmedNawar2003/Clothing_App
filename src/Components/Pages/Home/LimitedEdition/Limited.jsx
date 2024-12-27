@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Limited.css';
 
 export default function Limited() {
@@ -16,7 +17,7 @@ export default function Limited() {
             .then((data) => {
                 const limitedProducts = data.filter(product => product['limited-edition'] === true);
                 setProducts(limitedProducts);
-                setVisibleProducts(limitedProducts); // Initialize visible products
+                setVisibleProducts(limitedProducts);
             })
             .catch((error) => console.error('Error fetching product data:', error));
     }, []);
@@ -51,20 +52,22 @@ export default function Limited() {
                         {visibleProducts.map((product, index) => (
                             <div className="col-3 item" key={index}>
                                 <div className="img">
-                                    <img src={product.image_1} alt={product.name} />
+                                    <Link to={`../../ProductDetails/Details`}>
+                                        <img src={product.image_1} alt={product.name} />
+                                    </Link>
                                     <button className="addtoCart">
                                         add to cart
                                     </button>
                                 </div>
                                 <div className="info">
-                                    <p className="tag">
-                                        {product.category}
-                                    </p>
+                                    <Link to={`../../ProductDetails/Details`}>
+                                        <p className="tag">{product.category}</p>
+                                        <h5 className="name">{product.name}</h5>
+                                        <p className="price">${product.price}</p>
+                                    </Link>
                                     <div className="towishlist">
                                         <i className="fa-regular fa-heart"></i>
                                     </div>
-                                    <h5 className="name">{product.name}</h5>
-                                    <p className="price">${product.price}</p>
                                 </div>
                             </div>
                         ))}
