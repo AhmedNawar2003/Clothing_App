@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 import './Limited.css';
 
 export default function Limited() {
     const [products, setProducts] = useState([]);
     const [visibleProducts, setVisibleProducts] = useState([]);
+    const navigate = useNavigate(); 
 
     useEffect(() => {
         fetch('/products.json')
@@ -36,6 +37,10 @@ export default function Limited() {
         setVisibleProducts(shifted);
     };
 
+    const handleProductClick = (product) => {
+        navigate('/Details', { state: { product } });
+    };
+
     return (
         <section>
             <div className="container">
@@ -52,19 +57,19 @@ export default function Limited() {
                         {visibleProducts.map((product, index) => (
                             <div className="col-3 item" key={index}>
                                 <div className="img">
-                                    <Link to={`../../ProductDetails/Details`}>
-                                        <img src={product.image_1} alt={product.name} />
-                                    </Link>
+                                    <img
+                                        src={product.image_1}
+                                        alt={product.name}
+                                        onClick={() => handleProductClick(product)}
+                                    />
                                     <button className="addtoCart">
                                         add to cart
                                     </button>
                                 </div>
                                 <div className="info">
-                                    <Link to={`../../ProductDetails/Details`}>
-                                        <p className="tag">{product.category}</p>
-                                        <h5 className="name">{product.name}</h5>
-                                        <p className="price">${product.price}</p>
-                                    </Link>
+                                    <p className="tag" onClick={() => handleProductClick(product)}>{product.category}</p>
+                                    <h5 className="name" onClick={() => handleProductClick(product)}>{product.name}</h5>
+                                    <p className="price" onClick={() => handleProductClick(product)}>${product.price}</p>
                                     <div className="towishlist">
                                         <i className="fa-regular fa-heart"></i>
                                     </div>

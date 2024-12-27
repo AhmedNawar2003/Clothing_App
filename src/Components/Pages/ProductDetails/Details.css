@@ -5,9 +5,13 @@
 
 .details {
     justify-content: center;
-    gap: 0.625rem;
+    gap: 1.25rem;
 
     .info {
+        padding: 1.875rem;
+        justify-content: space-between;
+        align-items: center;
+
         .name {
             margin-bottom: 1.25rem;
         }
@@ -16,7 +20,7 @@
             margin-bottom: 1.25rem;
         }
 
-        .disc {
+        .desc {
             margin: 1.25rem 0rem;
 
             p {
@@ -28,6 +32,8 @@
             justify-content: center;
 
             .size {
+
+
                 h6 {
                     color: var(--primary);
                     display: inline;
@@ -36,6 +42,8 @@
             }
 
             .color {
+
+
                 h6 {
                     color: var(--primary);
                     display: inline;
@@ -51,7 +59,8 @@
             margin: 1.25rem;
 
             .count {
-                padding: 1.25rem 0rem;
+
+                padding: 1.25rem;
                 border: 1px solid var(--primary);
 
                 .counter-btn {
