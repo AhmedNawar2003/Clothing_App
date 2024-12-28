@@ -1,205 +1,183 @@
-:root {
-  font-size: 16px;
-}
-
-.header {
-  width: 90%;
-  margin: auto;
-  margin-bottom: 50px;
-
-  .img {
-    position: relative !important;
-    padding: 0.625rem;
-    border: 1px solid var(--primary);
-
-    .inside {
-      position: absolute !important;
-      margin-top: 6.25rem;
-      margin-inline-start: 3.125rem;
-      z-index: 111;
-
-      h1 {
-        margin-bottom: 1.875rem;
-        font-weight: bolder;
-        font-size: 6.25rem;
-      }
-
-      button {
-        background-color: transparent;
-        width: fit-content;
-        padding: 5px;
-        color: var(--primary);
-        font-weight: 500;
-        position: relative;
-        font-size: 0.938rem;
-        margin: 0.625rem;
-
-        .linkBtn {
-          color: var(--primary);
-        }
-
-        &:after {
-          position: absolute;
-          content: "";
-          width: 0;
-          height: 0.125rem;
-          background-color: var(--primary);
-          left: 0;
-          right: 0;
-          bottom: 0;
-          transition: all 0.5s ease;
-        }
-
-        &:hover::after {
-          width: calc(100% - 10px);
-          left: 0.313rem;
-        }
-      }
-    }
-  }
-}
-
-.products {
+.headShop{
+  background-image: url('../../../assets/image/shop_banner_character1.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px;
+  display: flex;
   justify-content: center;
-  margin: 0;
-  padding: 0;
-
-  .item {
-    position: relative;
-    text-align: start;
-    padding: 0;
-    margin: 0;
-
-    .sale {
-      position: absolute;
-      z-index: 111;
-      top: 5px;
-      left: 5px;
-      background-color: var(--secondary);
-      color: var(--main);
-      padding: 5px;
-    }
-
-    .new {
-      position: absolute;
-      z-index: 111;
-      top: 5px;
-      right: 5px;
-      background-color: var(--tertiary);
-      color: var(--primary);
-      padding: 5px;
-    }
-
-    .img {
-      height: 450px;
-      position: relative;
-      cursor: pointer;
-      text-align: center;
-      .firstImage {
-        display: block;
-        opacity: 1;
-        transition: all 0.5s ease-in-out;
-      }
-
-      .seccondImage {
-        display: none;
-        opacity: 0;
-        transition: all 0.5s ease-in-out;
-      }
-
-      .addtoCart {
-        opacity: 0;
-        position: absolute;
-        bottom: -50px;
-        left: 0;
-        right: 0;
-        padding: 10px;
-        width: 90%;
-        margin: auto;
-        background-color: var(--main);
-        transition: all 0.5s ease-in-out;
-
-        &:hover {
-          background-color: #ffffffb2;
-        }
-      }
-
-      &:hover {
-        transtion: all 0.8s ease-in-out;
-        .firstImage {
-          opacity: 0;
-          display: none;
-        }
-
-        .seccondImage {
-          opacity: 1;
-          display: block;
-        }
-
-        .addtoCart {
-          bottom: 5px;
-          opacity: 1;
-        }
-      }
-    }
-
-    .info {
-      position: relative;
-      margin: 0.625rem;
-      .tag {
-        text-transform: capitalize !important;
-        margin-bottom: 0.313rem;
-        cursor: pointer;
-      }
-
-      .towishlist {
-        i {
-          position: absolute;
-          top: 0;
-          right: 0;
-          cursor: pointer;
-        }
-      }
-
-      .name {
-        font-size: 16px;
-        text-transform: capitalize !important;
-        color: var(--primary);
-        margin: 0;
-        cursor: pointer;
-      }
-
-      .price {
-        cursor: pointer;
-      }
-    }
-  }
+  align-items: center;
 }
-.notification {
-  position: fixed;
-  top: 0; /* Position it directly below the navbar */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Offset for perfect centering */
-  background-color: #4caf50; /* Green background */
-  color: white;
-  padding: 15px 20px;
+.headShop h2{
+  font-size: 40px;
+  color: var(--primary);
+  text-transform: capitalize;
+  font-weight: 500;
+}
+.Shop {
+  padding: 50px 0;
+  background-color: aliceblue;
+}
+.Shop .card {
+  margin-bottom: 30px;
+  position: relative;
+  cursor: pointer;
+}
+.Shop .cardShopImg {
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+.Shop .cardShopImg img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  transition: all 0.8s ease;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.Shop .cardShopImg .image1 {
+  opacity: 1;
+  position: relative;
+  inset: 0;
+}
+.Shop .cardShopImg .image2 {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+}
+.Shop .cardShopImg:hover .image1 {
+  opacity: 1;
+}
+.Shop .cardShopImg:hover .image2 {
+  opacity: 1;
+}
+.Shop .cardShopBody {
+  padding: 20px;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.Shop .cardShopBody h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: 10px;
+  text-transform: capitalize !important;
+}
+.Shop .cardShopBody .description {
+  font-size: 14px;
+  color: var(--primary);
+  margin-bottom: 10px;
+  text-transform: initial !important;
+}
+.Shop .cardShopBody .price {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: 10px;
+  text-transform: capitalize !important;
+}
+.Shop .cardShopBody .btn {
+  background-color: var(--main);
+  color: var(--primary);
+  border: none;
+  padding: 10px 20px;
   border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 999; /* Ensure it's above other elements but below the navbar */
-  font-size: 1rem;
-  animation: fadeInOut 3s ease-in-out;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  left: 50%;
+  bottom: 220px;
+  transform: translate(-50%, 30px);
+  opacity: 0;
+  z-index: 10;
+  width: 90%;
+  text-transform: capitalize !important;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.606);
+    color: var(--primary);
+  }
+}
+.Shop .card:hover .btn {
+  transform: translate(-50%, -30px);
+  opacity: 1;
+}
+.Shop .cardShopBody .heart{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+  color: #f44336;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  &:hover {
+    color: #e53935;
+  }
 }
 
-/* Fade in and out animation */
-@keyframes fadeInOut {
-  0%,
-  100% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(20px); /* Starts from below */
+@media only screen and (max-width: 1200px) {
+  .Shop .cardShopBody .btn {
+    bottom: 250px !important;
   }
-  10%,
-  90% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0); /* Comes to its place */
+}
+@media only screen and (max-width: 992px) {
+  .headShop h2{
+    font-size: 30px !important;
+  }
+  .Shop .cardShopBody .btn {
+    bottom: 220px !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .headShop h2{
+    font-size: 25px !important;
+  }
+  .Shop .cardShopBody .btn {
+    bottom: 180px !important;
+  }
+  .Shop .cardShopImg .image1,
+  .Shop .cardShopImg .image2 {
+    height: 100% !important;
+  }
+  .Shop .cardShopBody h3{
+    font-size: 14px !important;
+  }
+  .Shop .cardShopBody .description{
+    font-size: 12px !important;
+  }
+  .Shop .cardShopBody .price{
+    font-size: 14px !important;
+  }
+  .Shop .cardShopBody .heart{
+    font-size: 18px !important;
+  }
+
+}
+@media only screen and (max-width: 576px) {
+  .headShop h2{
+    font-size: 20px !important;
+  }
+  .Shop .cardShopBody h3{
+    font-size: 12px !important;
+  }
+  .Shop .cardShopBody .description{
+    font-size: 10px !important;
+  }
+  .Shop .cardShopBody .price{
+    font-size: 12px !important;
+  }
+  .Shop .cardShopBody .btn{
+   padding: 5px 10px !important;
+   font-size: 11px;
+  }
+  .Shop .cardShopBody .heart{
+    font-size: 14px !important;
   }
 }

@@ -13,8 +13,8 @@ export default function Logo() {
               <p>
                 1418 River Drive, Suite 35 Cottonhall, CA 9622 United States
               </p>
-              <div className="mb-2 sale">sale@uomo.com</div>
-              <div className="mb-2 sale">+1 246-345-0695</div>
+              <div className="mb-2 saleFooter">sale@uomo.com</div>
+              <div className="mb-2 saleFooter">+1 246-345-0695</div>
               <div className="social-links">
                 <Link to="#">
                   <i className="fab fa-facebook-f"></i>

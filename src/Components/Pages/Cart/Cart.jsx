@@ -27,27 +27,37 @@ export default function Cart() {
           </p>
         ) : (
           <>
-            <div className="cart-container">
+            <div className="row">
               {cartItems.map((item, index) => (
-                <div key={index} className="cart-item">
-                  <img
-                    src={item.image_1}
-                    alt={item.name}
-                    className="cart-item-image"
-                  />
-                  <div className="cart-item-details">
-                    <h5>{item.name}</h5>
-                    <p>Category: {item.category}</p>
-                    <p>
-                      Price: ${item.sale ? item.discounted_price : item.price}
-                    </p>
+                <div
+                  key={index}
+                  className="col-lg-6"
+                >
+                  <div className="card">
+                    <div className="cart-container">
+                      <div className="cart-item">
+                        <img
+                          src={item.image_1}
+                          alt={item.name}
+                          className="cart-item-image"
+                        />
+                        <div className="cart-item-details">
+                          <h5>{item.name}</h5>
+                          <p>Category: {item.category}</p>
+                          <p>
+                            Price: $
+                            {item.sale ? item.discounted_price : item.price}
+                          </p>
+                        </div>
+                        <button
+                          className="remove-btn"
+                          onClick={() => removeFromCart(item.id)}
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                  <button
-                    className="remove-btn"
-                    onClick={() => removeFromCart(item.id)}
-                  >
-                    Remove
-                  </button>
                 </div>
               ))}
             </div>

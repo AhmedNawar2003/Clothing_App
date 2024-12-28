@@ -120,7 +120,12 @@ button:not(:disabled) {
 
 
 /* Responsive */
-
+@media screen and (max-width: 1200px) {
+  .spanCircle{
+    top: 8.5px !important;
+  }
+  
+}
 @media only screen and (max-width: 992px) {
   .navbar-brand {
     width: 100px;
@@ -128,6 +133,10 @@ button:not(:disabled) {
   .navbar-toggler-icon {
     margin-top: 5px;
   }
+  .spanCircle {
+    top: 373.5px !important;
+
+}
 }
 
 @media only screen and (max-width: 768px) {
@@ -137,6 +146,11 @@ button:not(:disabled) {
   .navbar-nav {
     gap: 18px !important;
   }
+  .spanCircle {
+    top: 330.5px !important;
+    width: 20px !important;
+    height: 20px !important;
+}
 }
 
 @media only screen and (max-width: 576px) {

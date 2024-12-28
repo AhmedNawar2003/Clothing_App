@@ -114,7 +114,7 @@ export default function Navbar({ user, setUser }) {
               </ul>
             )}
             <ul className="icons">
-              <li className="nav-item">
+              <li className="nav-item name">
                 <span className="nav-link name">
                   {user ? `Welcome, ${user.username}` : "Guest"}
                 </span>
@@ -152,7 +152,9 @@ export default function Navbar({ user, setUser }) {
                   </li>
                   <li>
                     <Link to="cart">
-                      <span className="spanCircle cartSpan">{cartItems?.length || 0}</span>
+                      <span className="spanCircle cartSpan">
+                        {cartItems?.length || 0}
+                        </span>
                       <span className="spanIcon">
                         <i className="fa-solid fa-shopping-cart"></i>
                       </span>

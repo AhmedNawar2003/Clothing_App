@@ -5,7 +5,7 @@ import Subscribe from "./Subscribe";
 export default function Footer() {
   return (
     <>
-      <section className="footer">
+      <section className="footer pb-0">
         <div className="container">
         <div className="row">
           <Logo/>

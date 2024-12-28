@@ -1,13 +1,10 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Collections from "./Collections/Collections";
-import Limited from "./LimitedEdition/Limited";
 import Service from "./service/service";
 import SpringCollections from "./SpringCollections/SpringCollections";
 import Summer from "./Summer/Summer";
-import Trendy from "./TrendyProducts/Trendy";
 import Tshirts from "./Tshirts/Tshirts";
 import Uomo from "./Uomo/Uomo";
-import ShopProduct from "../Shop/ShopProduct";
 import AOS from "aos";
 import { useEffect } from "react";
 
@@ -38,12 +35,6 @@ export default function Home() {
       <div data-aos="fade-left">
         <Collections />
       </div>
-      <div data-aos="fade-right">
-        <Trendy />
-      </div>
-      <div data-aos="zoom-in">
-        <ShopProduct />
-      </div>
       <div data-aos="fade-up">
         <SpringCollections
           initialDays={170}
@@ -54,9 +45,6 @@ export default function Home() {
       </div>
       <div data-aos="fade-left">
         <Tshirts />
-      </div>
-      <div data-aos="flip-right">
-        <Limited />
       </div>
       <div data-aos="fade-down">
         <Uomo />
