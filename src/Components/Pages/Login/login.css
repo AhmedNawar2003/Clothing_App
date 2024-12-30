@@ -1,62 +1,203 @@
-:root {
-  font-size: 16px;
+.login {
+  padding: 80px 0;
+  background-color: aliceblue;
 }
-
-* {
-  box-sizing: border-box;
+.login .cardLogin {
+  border: 1px solid #ededed;
 }
-
-.logIn {
-  width: 40%;
-  margin: 1.25rem auto;
-  justify-content: center;
-  gap: 0.625rem;
-
-  label {
-    margin-inline-start: 0.625rem;
-    font-size: 0.625rem;
-  }
-
-  input {
-    border-radius: 0;
-    padding: 0.625rem;
-    text-transform: initial !important;
-
-    &:focus {
-      border: 2px solid var(--primary);
-      box-shadow: none;
-    }
-  }
-
-  p {
-    text-transform: capitalize !important;
-  }
-
-  .logBtn {
-    background-color: var(--primary);
-    color: var(--main);
-    padding: 20px;
-  }
-
-  .toRegister {
-    text-align: center;
-
-    p {
-      text-transform: capitalize !important;
-      font-size: 0.938rem;
-
-      a {
-        text-transform: capitalize !important;
-        text-decoration: underline !important;
-        color: var(--primary);
-      }
-    }
+.login h2 {
+  font-size: 30px;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+.login p {
+  font-size: 14px;
+  color: var(--primary);
+  margin-bottom: 10px;
+  text-transform: capitalize !important;
+}
+.login .my-3 {
+  display: flex;
+  flex-direction: column;
+}
+.login label {
+  margin-bottom: 10px;
+  text-transform: capitalize !important;
+}
+.login input {
+  padding: 10px;
+  width: 70%;
+  text-transform: initial !important;
+}
+.login .signIn {
+  background-color: var(--primary);
+  padding: 10px 20px;
+  color: var(--main);
+  width: 50%;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid var(--primary);
+  transition: all 500ms ease;
+  text-transform: capitalize !important;
+  &:hover {
+    background-color: var(--main);
+    color: var(--primary);
   }
 }
+.login .forget {
+  color: var(--primary);
+  transition: all 500ms ease;
+  text-transform: capitalize !important;
+  &:hover {
+    cursor: pointer;
+    color: var(--secondary);
+  }
+}
+.login h6 {
+  font-size: 18px;
+  color: var(--light_dark);
+  margin-bottom: 20px;
+  text-transform: capitalize !important;
+}
+.login .createAccount {
+  background-color: var(--secondary);
+  padding: 10px 20px;
+  color: var(--main);
+  width: 50%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid var(--secondary);
+  transition: all 500ms ease;
+  text-transform: capitalize !important;
+  &:hover {
+    background-color: var(--main);
+    color: var(--primary);
+  }
+}
+.login p {
+  color: var(--primary);
+}
+.login .paragraph {
+  color: var(--primary);
+}
+.login #password {
+  position: relative;
+}
+.login #log_showPassword {
+  position: absolute;
+  right: 205px;
+  top: 67.5%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 13px;
+}
 
-/* responsive */
-@media screen and (max-width: 400px) {
-  :root {
-    font-size: 12px;
+@media (max-width: 1200px) {
+  .login #log_showPassword {
+    right: 147px !important;
+  }
+}
+@media (max-width: 1100px) {
+  .login h2 {
+    font-size: 25px !important;
+  }
+  .login input {
+    font-size: 14px !important;
+  }
+ 
+}
+/***************************************/
+@media (max-width: 992px) {
+  .login h2 {
+    font-size: 20px !important;
+  }
+  .login input {
+    font-size: 12px !important;
+  }
+  .login #log_showPassword {
+    right: 220px !important;
+  }
+  .login label,
+  .login .signIn,
+  .login .forget,
+  .login .createAccount {
+    font-size: 14px !important;
+  }
+  .login h6 {
+    margin-top: 30px;
+    font-size: 15px !important;
+  }
+}
+/***************************************/
+@media (max-width: 768px) {
+  .login #log_showPassword {
+    right: 165px !important;
+    font-size: 10px !important;
+  }
+}
+/***************************************/
+@media (max-width: 600px) {
+  .login h2 {
+    font-size: 18px !important;
+  }
+  .login input {
+    font-size: 10px !important;
+  }
+  .login label,
+  .login .signIn,
+  .login .forget,
+  .login .createAccount {
+    font-size: 12px !important;
+  }
+  .login h6 {
+    margin-top: 30px;
+    font-size: 13px !important;
+  }
+}
+/***************************************/
+@media (max-width: 426px) {
+  .login h2 {
+    font-size: 15px !important;
+  }
+  .login input {
+    font-size: 8px !important;
+  }
+  .login label,
+  .login .signIn,
+  .login .forget,
+  .login .createAccount,
+  .login p,
+  .login .paragraph {
+    font-size: 10px !important;
+  }
+  .login h6 {
+    margin-top: 30px;
+    font-size: 11px !important;
+  }
+  .login #log_showPassword {
+    right: 115px !important;
+    font-size: 9px !important;
+  }
+  
+}
+/***************************************/
+@media (max-width: 376px) {
+  .login #log_showPassword {
+    right: 135px !important;
+    font-size: 8px !important;
+  }
+  .login .signIn,
+  .login .createAccount {
+    padding: 5px !important;
+  }
+}
+/***************************************/
+@media (max-width: 330px) {
+  .login #log_showPassword {
+    right: 87px !important;
+        top: 69% !important;
   }
 }

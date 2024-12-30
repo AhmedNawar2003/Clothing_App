@@ -20,9 +20,9 @@ import BlogWomen from "./Components/Pages/Blog/BlogWomen/BlogWomen";
 import BlogTips from "./Components/Pages/Blog/BlogTips/BlogTips";
 import BlogTree from "./Components/Pages/Blog/BlogTree/BlogTree";
 import BlogRule from "./Components/Pages/Blog/BlogRule/BlogRule";
-import Details from "./Components/Pages/ProductDetails/Details";
 import { useState } from "react";
-import { WishlistProvider } from "./Components/WishlistContext/WishlistContext";
+import ResetPassword from "./Components/ResetPassword/ResetPassword";
+import ProductDetail from "./Components/ProductDetail/ProductDetail";
 export default function App() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
   let router = createBrowserRouter([
@@ -47,6 +47,7 @@ export default function App() {
         },
         { path: "login", element: <Login setUser={setUser} /> },
         { path: "register", element: <Register setUser={setUser} /> },
+        {path:"resetPassword",element:<ResetPassword/>},
         {
           path: "wishlist",
           element: (
@@ -54,12 +55,12 @@ export default function App() {
           ),
         },
         { path: "cart", element: <Cart /> },
-        { path: "details", element: <Details /> },
         { path: "mainblog", element: <MainBlog /> },
         { path: "blogwomen", element: <BlogWomen /> },
         { path: "blogtips", element: <BlogTips /> },
         { path: "blogtree", element: <BlogTree /> },
         { path: "blogrule", element: <BlogRule /> },
+        {path:'productDetail',element:<ProductDetail/>}
       ],
     },
     { path: "*", element: <Error_404 /> },

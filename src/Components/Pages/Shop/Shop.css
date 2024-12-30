@@ -1,5 +1,5 @@
-.headShop{
-  background-image: url('../../../assets/image/shop_banner_character1.webp');
+.headShop {
+  background-image: url("../../../assets/image/shop_banner_character1.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -8,7 +8,7 @@
   justify-content: center;
   align-items: center;
 }
-.headShop h2{
+.headShop h2 {
   font-size: 40px;
   color: var(--primary);
   text-transform: capitalize;
@@ -105,7 +105,7 @@
   transform: translate(-50%, -30px);
   opacity: 1;
 }
-.Shop .cardShopBody .heart{
+.Shop .cardShopBody .heart {
   display: flex;
   justify-content: flex-end;
   font-size: 24px;
@@ -121,6 +121,23 @@
     color: #e53935;
   }
 }
+.shop .notification {
+  position: fixed;
+  top: 100px;
+  right: 50%;
+  background-color: var(--secondary);
+  color: var(--primary);
+  padding: 10px 20px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+  animation: slideIn 0.5s forwards;
+}
 
 @media only screen and (max-width: 1200px) {
   .Shop .cardShopBody .btn {
@@ -128,7 +145,7 @@
   }
 }
 @media only screen and (max-width: 992px) {
-  .headShop h2{
+  .headShop h2 {
     font-size: 30px !important;
   }
   .Shop .cardShopBody .btn {
@@ -136,7 +153,7 @@
   }
 }
 @media only screen and (max-width: 768px) {
-  .headShop h2{
+  .headShop h2 {
     font-size: 25px !important;
   }
   .Shop .cardShopBody .btn {
@@ -146,38 +163,37 @@
   .Shop .cardShopImg .image2 {
     height: 100% !important;
   }
-  .Shop .cardShopBody h3{
+  .Shop .cardShopBody h3 {
     font-size: 14px !important;
   }
-  .Shop .cardShopBody .description{
+  .Shop .cardShopBody .description {
     font-size: 12px !important;
   }
-  .Shop .cardShopBody .price{
+  .Shop .cardShopBody .price {
     font-size: 14px !important;
   }
-  .Shop .cardShopBody .heart{
+  .Shop .cardShopBody .heart {
     font-size: 18px !important;
   }
-
 }
 @media only screen and (max-width: 576px) {
-  .headShop h2{
+  .headShop h2 {
     font-size: 20px !important;
   }
-  .Shop .cardShopBody h3{
+  .Shop .cardShopBody h3 {
     font-size: 12px !important;
   }
-  .Shop .cardShopBody .description{
+  .Shop .cardShopBody .description {
     font-size: 10px !important;
   }
-  .Shop .cardShopBody .price{
+  .Shop .cardShopBody .price {
     font-size: 12px !important;
   }
-  .Shop .cardShopBody .btn{
-   padding: 5px 10px !important;
-   font-size: 11px;
+  .Shop .cardShopBody .btn {
+    padding: 5px 10px !important;
+    font-size: 11px;
   }
-  .Shop .cardShopBody .heart{
+  .Shop .cardShopBody .heart {
     font-size: 14px !important;
   }
 }

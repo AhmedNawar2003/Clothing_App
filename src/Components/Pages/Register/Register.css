@@ -1,50 +1,206 @@
-:root {
-    font-size: 16px;
-}
-
-* {
-    box-sizing: border-box;
-}
-
 .register {
-    width: 40%;
-    margin: 20px auto;
-    justify-content: center;
-    gap: 10px;
-
-    label {
-        margin-inline-start: 0.625rem;
-        font-size: 0.625rem;
-    }
-
-    input {
-        border-radius: 0;
-        padding: 0.625rem;
-        text-transform: initial !important;
-
-        &:focus {
-            border: 0.125rem solid var(--primary);
-            box-shadow: none;
-        }
-    }
-
-    p {
-        text-transform: capitalize !important;
-        font-size: 0.75rem;
-    }
-
-    .regBtn {
-        background-color: var(--primary);
-        color: var(--main);
-        padding: 0.625rem;
-        font-size: 0.938rem;
-    }
-
+  padding: 80px 0;
+  background-color: azure;
+}
+.register .cardRegister {
+  border: 1px solid #ededed;
+}
+.register h2 {
+  font-size: 30px;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+.register p {
+  font-size: 14px;
+  color: var(--primary);
+  margin-bottom: 10px;
+  text-transform: capitalize !important;
+}
+.register .my-3 {
+  display: flex;
+  flex-direction: column;
+}
+.register label {
+  margin-bottom: 10px;
+  text-transform: capitalize !important;
+}
+.register input {
+  padding: 10px;
+  width: 70%;
+  text-transform: initial !important;
+  box-sizing: border-box;
+}
+.register .signIn {
+  background-color: var(--primary);
+  padding: 10px 20px;
+  color: var(--main);
+  width: 50%;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid var(--primary);
+  transition: all 500ms ease;
+  text-transform: capitalize !important;
+  &:hover {
+    background-color: var(--main);
+    color: var(--primary);
+  }
+}
+.register .forget {
+  color: var(--primary);
+  transition: all 500ms ease;
+  text-transform: capitalize !important;
+  &:hover {
+    cursor: pointer;
+    color: var(--secondary);
+  }
+}
+.register h6 {
+  font-size: 18px;
+  color: var(--light_dark);
+  margin-bottom: 20px;
+  text-transform: capitalize !important;
+}
+.register .createAccount {
+  background-color: var(--secondary);
+  padding: 10px 20px;
+  color: var(--main);
+  width: 50%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid var(--secondary);
+  transition: all 500ms ease;
+  text-transform: capitalize !important;
+  &:hover {
+    background-color: var(--main);
+    color: var(--primary);
+  }
+}
+.register p {
+  color: var(--primary);
+}
+.register .paragraph {
+  color: var(--primary);
+}
+.register .password {
+  position: relative;
+}
+.register #showReg_password {
+    position: absolute;
+    right: 205px;
+    top: 70%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--primary);
+    font-size: 13px;
 }
 
-/* responsive */
-@media screen and (max-width: 400px) {
-    :root {
-        font-size: 12px;
+@media (max-width: 1200px) {
+    .register #showReg_password {
+      right: 147px !important;
     }
-}
+  }
+  @media (max-width: 1100px) {
+    .register h2 {
+      font-size: 25px !important;
+    }
+    .register input {
+      font-size: 14px !important;
+    }
+   
+  }
+  /***************************************/
+  @media (max-width: 992px) {
+    .register h2 {
+      font-size: 20px !important;
+    }
+    .register input {
+      font-size: 12px !important;
+    }
+    .register #showReg_password {
+      right: 220px !important;
+    }
+    .register label,
+    .register .signIn,
+    .register .forget,
+    .register .createAccount {
+      font-size: 14px !important;
+    }
+    .register h6 {
+      margin-top: 30px;
+      font-size: 15px !important;
+    }
+  }
+  /***************************************/
+  @media (max-width: 768px) {
+    .register #showReg_password {
+      right: 165px !important;
+      font-size: 10px !important;
+    }
+  }
+  /***************************************/
+  @media (max-width: 600px) {
+    .register h2 {
+      font-size: 18px !important;
+    }
+    .register input {
+      font-size: 10px !important;
+    }
+    .register label,
+    .register .signIn,
+    .register .forget,
+    .register .createAccount {
+      font-size: 12px !important;
+    }
+    .register h6 {
+      margin-top: 30px;
+      font-size: 13px !important;
+    }
+  }
+  /***************************************/
+  @media (max-width: 426px) {
+    .register h2 {
+      font-size: 15px !important;
+    }
+    .register input {
+      font-size: 8px !important;
+    }
+    .register label,
+    .register .signIn,
+    .register .forget,
+    .register .createAccount,
+    .register p,
+    .register .paragraph {
+      font-size: 10px !important;
+    }
+    .register h6 {
+      margin-top: 30px;
+      font-size: 11px !important;
+    }
+    .register #showReg_password {
+      right: 115px !important;
+      font-size: 9px !important;
+    }
+    
+  }
+  /***************************************/
+  @media (max-width: 376px) {
+    .register #showReg_password {
+      right: 135px !important;
+      font-size: 8px !important;
+    }
+    .register .signIn,
+    .register .createAccount {
+      padding: 5px !important;
+    }
+  }
+  /***************************************/
+  @media (max-width: 330px) {
+    .register #showReg_password {
+      right: 87px !important;
+          top: 69% !important;
+    }
+  }
+  

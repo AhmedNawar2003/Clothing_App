@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Shop.css";
-import { useCart } from "../../CartContext/CartContext";
+import { useCart } from "../../CartContext/CartContext"; // Import the useCart hook
 import { useWishlist } from "../../WishlistContext/WishlistContext"; // Import the useWishlist hook
+import { Link } from 'react-router-dom';
 
 export default function ShopProduct() {
   const [products, setProducts] = useState([]); // State to hold fetched products
   const [loading, setLoading] = useState(true); // State to track loading status
   const [error, setError] = useState(null); // State to track errors
-  const { cartItems, addToCart } = useCart();
-  const { wishlistItems, handleWishlistToggle } = useWishlist(); // Access wishlist data
+  const { cartItems, addToCart } = useCart(); // Cart functions
+  const { wishlistItems, addToWishlist, removeFromWishlist } = useWishlist(); // Wishlist functions
   const [notification, setNotification] = useState("");
-
+  
   // Reset state when navigating away from this page
   useEffect(() => {
     return () => {
@@ -19,7 +20,7 @@ export default function ShopProduct() {
       setError(null);
     };
   }, []);
-
+  
   // Fetch products when component mounts
   useEffect(() => {
     async function fetchProduct() {
@@ -33,7 +34,6 @@ export default function ShopProduct() {
         setLoading(false);
       }
     }
-
     fetchProduct();
   }, []);
 
@@ -44,15 +44,15 @@ export default function ShopProduct() {
   const handleAddToCart = (product) => {
     // Check if product is already in the cart
     const productExists = cartItems.some((item) => item.id === product.id);
-
+    
     if (productExists) {
       setNotification("This product is already in your cart.");
       setTimeout(() => {
         setNotification(""); // Hide the notification after 3 seconds
       }, 3000);
     } else {
-      // Add product to cart if it doesn't exist
-      addToCart(product);
+      // Add product to cart with quantity = 1 (default)
+      addToCart({ ...product, quantity: 1 });
     }
   };
 
@@ -64,20 +64,22 @@ export default function ShopProduct() {
             {products.map((product, index) => (
               <div key={index} className="col-xl-3 col-lg-4 col-md-6">
                 <div className="card">
-                  <div className="cardShopImg">
-                    <img
-                      className="image1"
-                      src={product.image_1}
-                      alt={product.name}
-                    />
-                    {product.image_2 && (
+                  <Link to={`/productDetail`} state={{ product }}>
+                    <div className="cardShopImg">
                       <img
-                        className="image2"
-                        src={product.image_2}
+                        className="image1"
+                        src={product.image_1}
                         alt={product.name}
                       />
-                    )}
-                  </div>
+                      {product.image_2 && (
+                        <img
+                          className="image2"
+                          src={product.image_2}
+                          alt={product.name}
+                        />
+                      )}
+                    </div>
+                  </Link>
                   <div className="cardShopBody">
                     <h3>{product.name}</h3>
                     <p className="description">{product.description}</p>
@@ -90,15 +92,27 @@ export default function ShopProduct() {
                     )}
                     <button
                       className="btn btn-primary"
-                      onClick={() => handleAddToCart(product)} // Corrected
+                      onClick={() => handleAddToCart(product)} // Add to cart with quantity 1
                     >
                       Add to Cart
                     </button>
-                    <span className="heart"  onClick={() => handleWishlistToggle(product)}>
-                    {wishlistItems.some((item) => item.id === product.id) ? (
-                        <i className="fa-solid fa-heart"></i> 
+                    <span
+                      className="heart"
+                      onClick={() => {
+                        const existingItem = wishlistItems.find(
+                          (item) => item.id === product.id
+                        );
+                        if (existingItem) {
+                          removeFromWishlist(product.id); // Remove from wishlist if exists
+                        } else {
+                          addToWishlist(product); // Add to wishlist if not exists
+                        }
+                      }}
+                    >
+                      {wishlistItems.some((item) => item.id === product.id) ? (
+                        <i className="fa-solid fa-heart"></i>
                       ) : (
-                        <i className="fa-regular fa-heart"></i> 
+                        <i className="fa-regular fa-heart"></i>
                       )}
                     </span>
                   </div>
@@ -107,7 +121,7 @@ export default function ShopProduct() {
             ))}
           </div>
         </div>
-        {notification && <div className="notification">{notification}</div>} {/* Display notification */}
+        {notification && <div className="notification">{notification}</div>}
       </section>
     </>
   );

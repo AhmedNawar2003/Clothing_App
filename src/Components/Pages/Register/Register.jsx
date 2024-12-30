@@ -1,20 +1,26 @@
 import { useState } from "react";
 import "./Register.css";
-import Switchers from "../../Switch_log/Switchers";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
 export default function Register({ setUser }) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false); // State for password visibility
+  const [showPassword, setShowPassword] = useState(false);
   const Navigate = useNavigate();
 
   const handleRegister = () => {
     // Validate inputs
     if (!username || !email || !password) {
       alert("Please fill in all fields.");
+      return;
+    }
+
+    if (!/^[a-zA-Z0-9]{3,}$/.test(username)) {
+      alert(
+        "Username must be at least 3 characters long and contain only letters and numbers."
+      );
       return;
     }
 
@@ -29,11 +35,7 @@ export default function Register({ setUser }) {
     }
 
     // Create user object
-    const user = {
-      username,
-      email,
-      password,
-    };
+    const user = { username, email, password };
 
     // Save user data in localStorage
     localStorage.setItem("user", JSON.stringify(user));
@@ -41,6 +43,8 @@ export default function Register({ setUser }) {
     alert("Registration successful!");
     Navigate("/login");
   };
+
+  const togglePasswordVisibility = () => setShowPassword(!showPassword);
 
   return (
     <>
@@ -52,68 +56,82 @@ export default function Register({ setUser }) {
           <meta property="og:description" content="Register Page" />
         </Helmet>
       </HelmetProvider>
-      <div className="container">
-        <Switchers />
-        <div className="row register">
-          <div className="form-floating mb-3">
-            <input
-              type="text"
-              className="form-control"
-              id="floatingInput"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-            <label htmlFor="floatingInput">Username</label>
+      <section className="register">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6 col-md-12">
+              <div className="card cardRegister">
+                <h2>Register</h2>
+                <p>Please register below account detail</p>
+                <div className="my-3">
+                  <label htmlFor="username">Username</label>
+                  <input
+                    type="text"
+                    id="username"
+                    placeholder="User Name"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="my-3">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="email"
+                    id="Reg_email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="my-3 password">
+                  <label htmlFor="password">Password</label>
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    id="Reg_password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <i
+                    className={`fa-regular ${
+                      showPassword ? "fa-eye-slash" : "fa-eye"
+                    }`}
+                    id="showReg_password"
+                    onClick={togglePasswordVisibility}
+                  ></i>
+                </div>
+                <div className="my-3">
+                  <button
+                    className="signIn"
+                    id="register"
+                    onClick={handleRegister}
+                  >
+                    Create
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6 col-md-12">
+              <div className="card">
+                <h6>Already an account holder?</h6>
+                <div className="my-3">
+                  <Link to="/login" className="createAccount">
+                    Log in
+                  </Link>
+                </div>
+                <p>Terms & Conditions</p>
+                <p className="paragraph">
+                  Your privacy and security are important to us. For more
+                  information on how we use your data, read our
+                </p>
+                <p>Privacy Policy</p>
+              </div>
+            </div>
           </div>
-          <div className="form-floating mb-3">
-            <input
-              type="email"
-              className="form-control"
-              id="floatingEmail"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <label htmlFor="floatingEmail">Email Address *</label>
-          </div>
-          <div className="form-floating mb-3 position-relative">
-            <input
-              type={showPassword ? "text" : "password"}
-              className="form-control"
-              id="floatingPassword"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <label htmlFor="floatingPassword">Password *</label>
-            <span
-              className="toggle-password"
-              onClick={() => setShowPassword(!showPassword)}
-              style={{
-                cursor: "pointer",
-                position: "absolute",
-                right: "20px",
-                top: "15px",
-                userSelect: "none",
-              }}
-            >
-              {showPassword ? "🙈" : "👁️"}
-            </span>
-          </div>
-
-          <div className="col-sm-12 col-10">
-            <p>
-              Your personal data will be used to support your experience
-              throughout this website, to manage access to your account, and for
-              other purposes described in our privacy policy.
-            </p>
-          </div>
-          <button className="col-sm-12 col-10 regBtn" onClick={handleRegister}>
-            Register
-          </button>
         </div>
-      </div>
+      </section>
     </>
   );
 }
