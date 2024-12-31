@@ -3,14 +3,18 @@ import logo from "../../assets/image/logo.webp";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useCart } from "../CartContext/CartContext.jsx";
-import { useWishlist } from "../WishlistContext/WishlistContext.jsx"; // Import WishlistContext
+import { useWishlist } from "../WishlistContext/WishlistContext.jsx";
 
 export default function Navbar({ user, setUser }) {
   const [activeLink, setActiveLink] = useState("");
+  const [searchTerm, setSearchTerm] = useState(""); // State to hold search input
+  const [searchResults, setSearchResults] = useState([]); // State for search results
+  const [products, setProducts] = useState([]); // State to hold all products
+  const [showSearchPopup, setShowSearchPopup] = useState(false); // State to toggle search popup
   const location = useLocation();
   const Navigate = useNavigate();
   const { cartItems } = useCart();
-  const { wishlistItems } = useWishlist(); // Access wishlistItems from WishlistContext
+  const { wishlistItems } = useWishlist();
 
   // Track active link based on location
   useEffect(() => {
@@ -44,7 +48,34 @@ export default function Navbar({ user, setUser }) {
   const handleLogout = () => {
     localStorage.removeItem("user");
     setUser(null);
-    Navigate("/login"); // Redirect to login instead of register
+    Navigate("/login");
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault(); // Prevent form from refreshing the page
+    if (searchTerm.trim()) {
+      const results = products.filter((product) =>
+        product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        product.description.toLowerCase().includes(searchTerm.toLowerCase()) // Filter by description as well
+      );
+      setSearchResults(results);
+    } else {
+      setSearchResults([]); // If searchTerm is empty, clear results
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSearch(e); // Trigger search on Enter key press
+    }
+  };
+
+  const toggleSearchPopup = () => {
+    setShowSearchPopup((prev) => !prev); // Toggle search popup visibility
+  };
+
+  const closeSearchPopup = () => {
+    setShowSearchPopup(false); // Close the search popup
   };
 
   return (
@@ -136,7 +167,10 @@ export default function Navbar({ user, setUser }) {
               {user && (
                 <>
                   <li>
-                    <span>
+                    <span
+                      className="search-icon"
+                      onClick={toggleSearchPopup} // Open search popup
+                    >
                       <i className="fa-brands fa-searchengin"></i>
                     </span>
                   </li>
@@ -154,14 +188,17 @@ export default function Navbar({ user, setUser }) {
                     <Link to="cart">
                       <span className="spanCircle cartSpan">
                         {cartItems?.length || 0}
-                        </span>
+                      </span>
                       <span className="spanIcon">
                         <i className="fa-solid fa-shopping-cart"></i>
                       </span>
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <span className="nav-link logout-icon" onClick={handleLogout}>
+                    <span
+                      className="nav-link logout-icon"
+                      onClick={handleLogout}
+                    >
                       <i className="fa-solid fa-right-from-bracket"></i>
                     </span>
                   </li>
@@ -171,6 +208,27 @@ export default function Navbar({ user, setUser }) {
           </div>
         </div>
       </nav>
+
+      {/* Search Popup */}
+      {showSearchPopup && (
+        <div className="search-popup">
+          <form onSubmit={handleSearch}>
+            <input
+              type="text"
+              placeholder="Search products..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyDown={handleKeyPress} // Trigger search on Enter key press
+            />
+            <button type="submit">
+              <i className="fa-brands fa-searchengin"></i>
+            </button>
+            <button type="button" className="close-btn" onClick={closeSearchPopup}>
+              <i className="fa-solid fa-times"></i>
+            </button>
+          </form>
+        </div>
+      )}
     </header>
   );
 }

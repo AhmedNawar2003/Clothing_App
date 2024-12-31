@@ -3,16 +3,18 @@ import axios from "axios";
 import "./Shop.css";
 import { useCart } from "../../CartContext/CartContext"; // Import the useCart hook
 import { useWishlist } from "../../WishlistContext/WishlistContext"; // Import the useWishlist hook
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function ShopProduct() {
   const [products, setProducts] = useState([]); // State to hold fetched products
+  const [filteredProducts, setFilteredProducts] = useState([]); // State for filtered products
+  const [searchQuery, setSearchQuery] = useState(""); // State for search query
   const [loading, setLoading] = useState(true); // State to track loading status
   const [error, setError] = useState(null); // State to track errors
   const { cartItems, addToCart } = useCart(); // Cart functions
   const { wishlistItems, addToWishlist, removeFromWishlist } = useWishlist(); // Wishlist functions
   const [notification, setNotification] = useState("");
-  
+
   // Reset state when navigating away from this page
   useEffect(() => {
     return () => {
@@ -20,13 +22,14 @@ export default function ShopProduct() {
       setError(null);
     };
   }, []);
-  
+
   // Fetch products when component mounts
   useEffect(() => {
     async function fetchProduct() {
       try {
         const response = await axios.get("/products.json"); // Correct path to your JSON file
         setProducts(response.data); // Assuming response.data is an array
+        setFilteredProducts(response.data); // Set initial filtered products
         setLoading(false);
       } catch (err) {
         console.error("Error fetching products:", err);
@@ -37,31 +40,48 @@ export default function ShopProduct() {
     fetchProduct();
   }, []);
 
+  // Update filtered products based on search query
+  useEffect(() => {
+    const results = products.filter((product) =>
+      product.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredProducts(results);
+  }, [searchQuery, products]);
+
   // Show loading indicator or error message
   if (loading) return <p>Loading products...</p>;
   if (error) return <p>Error loading products: {error}</p>;
 
   const handleAddToCart = (product) => {
-    // Check if product is already in the cart
-    const productExists = cartItems.some((item) => item.id === product.id);
-    
-    if (productExists) {
-      setNotification("This product is already in your cart.");
-      setTimeout(() => {
-        setNotification(""); // Hide the notification after 3 seconds
-      }, 3000);
+    const existingItem = cartItems.find((item) => item.id === product.id);
+    if (existingItem) {
+      addToCart({ ...product, quantity: existingItem.quantity + 1 });
+      setNotification("Item already exists in the cart, quantity updated!");
     } else {
-      // Add product to cart with quantity = 1 (default)
       addToCart({ ...product, quantity: 1 });
+      setNotification("Item added to cart successfully!");
     }
+    setTimeout(() => {
+      setNotification("");
+    }, 3000);
   };
 
   return (
     <>
       <section className="Shop">
         <div className="container">
+          {/* Search Bar */}
+          <div className="search-bar">
+            <input
+              type="text"
+              placeholder="Search for products..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="form-control"
+            />
+          </div>
           <div className="row">
-            {products.map((product, index) => (
+            {filteredProducts.map((product, index) => (
               <div key={index} className="col-xl-3 col-lg-4 col-md-6">
                 <div className="card">
                   <Link to={`/productDetail`} state={{ product }}>
@@ -85,14 +105,14 @@ export default function ShopProduct() {
                     <p className="description">{product.description}</p>
                     {product.sale ? (
                       <p className="price">
-                        <del>${product.price}</del> ${product.disocunted_price}
+                        <del>${product.price}</del> ${product.discounted_price}
                       </p>
                     ) : (
                       <p className="price">${product.price}</p>
                     )}
                     <button
                       className="btn btn-primary"
-                      onClick={() => handleAddToCart(product)} // Add to cart with quantity 1
+                      onClick={() => handleAddToCart(product)}
                     >
                       Add to Cart
                     </button>
@@ -103,9 +123,9 @@ export default function ShopProduct() {
                           (item) => item.id === product.id
                         );
                         if (existingItem) {
-                          removeFromWishlist(product.id); // Remove from wishlist if exists
+                          removeFromWishlist(product.id);
                         } else {
-                          addToWishlist(product); // Add to wishlist if not exists
+                          addToWishlist(product);
                         }
                       }}
                     >

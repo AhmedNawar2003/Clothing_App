@@ -1,13 +1,12 @@
 import { createContext, useContext, useState, useEffect } from "react";
-
+import "./WishlistContext.css";
 const WishlistContext = createContext();
 
-export const useWishlist = () => {
-  return useContext(WishlistContext);
-};
+export const useWishlist = () => useContext(WishlistContext);
 
 export const WishlistProvider = ({ children }) => {
   const [wishlistItems, setWishlistItems] = useState([]);
+  const [message, setMessage] = useState("");
 
   // Load wishlist from sessionStorage on mount
   useEffect(() => {
@@ -22,25 +21,31 @@ export const WishlistProvider = ({ children }) => {
     sessionStorage.setItem("wishlist", JSON.stringify(wishlistItems));
   }, [wishlistItems]);
 
+  // Show message
+  const showMessage = (msg) => {
+    setMessage(msg);
+    setTimeout(() => setMessage(""), 3000); // Clear message after 3 seconds
+  };
+
   // Add or Update item in Wishlist
   const addToWishlist = (product) => {
-    // Check if item is already in the wishlist
     const existingItem = wishlistItems.find((item) => item.id === product.id);
+
     if (existingItem) {
-      // Update quantity if item is already in wishlist
       setWishlistItems((prevItems) =>
         prevItems.map((item) =>
           item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 } // Increment quantity
+            ? { ...item, quantity: item.quantity + 1 }
             : item
         )
       );
+      showMessage("Item already exists in the wishlist and quantity updated!");
     } else {
-      // Add new item to wishlist
       setWishlistItems((prevItems) => [
         ...prevItems,
-        { ...product, quantity: 1 }, // Start quantity at 1
+        { ...product, quantity: 1 },
       ]);
+      showMessage("Item added to wishlist successfully!");
     }
   };
 
@@ -49,28 +54,36 @@ export const WishlistProvider = ({ children }) => {
     setWishlistItems((prevItems) =>
       prevItems.filter((item) => item.id !== productId)
     );
+    showMessage("Item removed from wishlist!");
   };
-  //Remove all items from Wishlist
+
+  // Remove all items from Wishlist
   const clearWishlist = () => {
     setWishlistItems([]);
+    showMessage("Wishlist cleared!");
   };
+
   // Update quantity (increment or decrement)
   const updateWishlistQuantity = (productId, action) => {
-    setWishlistItems((prevItems) =>
-      prevItems.map((item) => {
-        if (item.id === productId) {
-          if (action === "increment") {
-            return { ...item, quantity: item.quantity + 1 };
-          }
-          if (action === "decrement" && item.quantity > 1) {
-            return { ...item, quantity: item.quantity - 1 };
-          } else if (action === "decrement" && item.quantity === 1) {
-            return null; // Item will be removed when quantity reaches 1
-          }
-        }
-        return item;
-      }).filter(Boolean) // Remove null values (items with 0 quantity)
+    setWishlistItems(
+      (prevItems) =>
+        prevItems
+          .map((item) => {
+            if (item.id === productId) {
+              if (action === "increment") {
+                return { ...item, quantity: item.quantity + 1 };
+              }
+              if (action === "decrement" && item.quantity > 1) {
+                return { ...item, quantity: item.quantity - 1 };
+              } else if (action === "decrement" && item.quantity === 1) {
+                return null; // Remove item if quantity is 1
+              }
+            }
+            return item;
+          })
+          .filter(Boolean) // Remove null values
     );
+    showMessage("Item quantity updated!");
   };
 
   return (
@@ -81,9 +94,12 @@ export const WishlistProvider = ({ children }) => {
         updateWishlistQuantity,
         removeFromWishlist,
         clearWishlist,
+        message,
       }}
     >
       {children}
+      {/* Render the message at the top */}
+      {message && <div className="wishlist-message">{message}</div>}
     </WishlistContext.Provider>
   );
 };

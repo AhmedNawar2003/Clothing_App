@@ -18,7 +18,6 @@ export default function Cart() {
           return total + price * (item.quantity || 0);
         }, 0)
       : 0;
-
   return (
     <>
       <HelmetProvider>

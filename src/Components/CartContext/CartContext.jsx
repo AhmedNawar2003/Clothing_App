@@ -17,12 +17,17 @@ export function CartProvider({ children }) {
     }
   }, [cartItems]);
 
+  const showMessage = (msg) => {
+    setMessage(msg);
+    setTimeout(() => setMessage(""), 3000); // Clear message after 3 seconds
+  };
+
   const addToCart = (item) => {
     // Check if the product already exists in the cart
     const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
 
     if (existingItem) {
-      // If the item exists, update the quantity
+      // If the item exists, update its quantity
       setCartItems((prevItems) =>
         prevItems.map((cartItem) =>
           cartItem.id === item.id
@@ -30,27 +35,20 @@ export function CartProvider({ children }) {
             : cartItem
         )
       );
-      // Set message to indicate the item already exists and its quantity is updated
-      setMessage("Item already exists in the cart and quantity updated!");
+      showMessage("Item already exists in the cart and quantity updated!");
     } else {
       // If the item doesn't exist, add it to the cart with the specified quantity
       setCartItems((prevItems) => [
         ...prevItems,
         { ...item, quantity: item.quantity },
       ]);
-      // Set message to indicate the item was added successfully
-      setMessage("Item added to cart successfully!");
+      showMessage("Item added to cart successfully!");
     }
-
-    // Show success message for 3 seconds
-    setTimeout(() => {
-      setMessage(""); // Hide message after 3 seconds
-    }, 3000);
   };
 
   const removeFromCart = (itemId) => {
-    setCartItems((prevItems) => {
-      const updatedItems = prevItems
+    setCartItems((prevItems) =>
+      prevItems
         .map((item) => {
           if (item.id === itemId) {
             // Decrease quantity if more than 1
@@ -62,21 +60,28 @@ export function CartProvider({ children }) {
           }
           return item;
         })
-        .filter(Boolean); // Remove null values from the cart
-      return updatedItems;
-    });
+        .filter(Boolean) // Remove null values from the cart
+    );
+    showMessage("Item removed from cart!");
   };
 
   const clearCart = () => {
     setCartItems([]); // This will trigger the useEffect hook to remove from sessionStorage
+    showMessage("All items removed from the cart!");
   };
 
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, clearCart }}
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        clearCart,
+        message,
+      }}
     >
       {children}
-      {message && <div className="success-message">{message}</div>}
+      {message && <div className="cart-message">{message}</div>}
     </CartContext.Provider>
   );
 }

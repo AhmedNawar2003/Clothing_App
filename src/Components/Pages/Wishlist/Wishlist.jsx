@@ -1,32 +1,30 @@
 import { useWishlist } from "../../WishlistContext/WishlistContext.jsx"; // Import WishlistContext
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import "./Wishlist.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function Wishlist() {
-  const { wishlistItems, updateWishlistQuantity, removeFromWishlist, clearWishlist } = useWishlist(); // Use Wishlist Context
+  const {
+    wishlistItems,
+    updateWishlistQuantity,
+    removeFromWishlist,
+    clearWishlist,
+    message,
+  } = useWishlist(); // Use Wishlist Context
 
-  // Function to calculate price per item considering quantity and display the correct price
+  // Function to calculate price per item
   const getItemPrice = (item) => {
-    const pricePerUnit = item.disocunted_price ? item.disocunted_price : item.price;
-    return pricePerUnit * item.quantity;
+    const pricePerUnit = item.disocunted_price
+      ? parseFloat(item.disocunted_price)
+      : parseFloat(item.price);
+    return pricePerUnit * (item.quantity || 1);
   };
 
-  // Calculate the total price for wishlist items, considering quantity
+  // Calculate the total price for wishlist items
   const totalPrice =
-    wishlistItems && Array.isArray(wishlistItems)
+    wishlistItems && wishlistItems.length > 0
       ? wishlistItems.reduce((total, item) => total + getItemPrice(item), 0)
       : 0;
-
-  // Handle Decrement of Quantity
-  const handleDecrement = (itemId) => {
-    updateWishlistQuantity(itemId, "decrement");
-  };
-
-  // Clear all items from the wishlist
-  const handleClearWishlist = () => {
-    clearWishlist(); // Call the clear function from context
-  };
 
   return (
     <>
@@ -40,6 +38,9 @@ export default function Wishlist() {
       </HelmetProvider>
 
       <section className="wishlist">
+        {/* Success Message */}
+        {message && <div className="wishlist-message">{message}</div>}
+
         {wishlistItems.length === 0 ? (
           <p className="text-center">
             Your wishlist is empty. Start adding some products!
@@ -56,13 +57,21 @@ export default function Wishlist() {
                 {wishlistItems.map((item) => (
                   <div key={item.id} className="col-xl-3 col-lg-4 col-md-6">
                     <div className="card">
-                     <Link to={`/productDetail`} state={{ item }}>
-                     <div className="cardImg">
-                        <img className="image1" src={item.image_1} alt={item.name} />
-                        {item.image_2 && (
-                          <img className="image2" src={item.image_2} alt={item.name} />
-                        )}
-                      </div>
+                      <Link to={`/productDetail`} state={{ item }}>
+                        <div className="cardImg">
+                          <img
+                            className="image1"
+                            src={item.image_1}
+                            alt={item.name}
+                          />
+                          {item.image_2 && (
+                            <img
+                              className="image2"
+                              src={item.image_2}
+                              alt={item.name}
+                            />
+                          )}
+                        </div>
                       </Link>
                       <div className="cardBody">
                         <h3>{item.name}</h3>
@@ -75,10 +84,14 @@ export default function Wishlist() {
                             <>${parseFloat(item.price).toFixed(2)}</>
                           )}
                         </p>
-                        <span className="itemNum">Quantity: {item.quantity}</span>
+                        <span className="itemNum">
+                          Quantity: {item.quantity}
+                        </span>
                         <div className="cardBtn">
                           <button
-                            onClick={() => handleDecrement(item.id)}
+                            onClick={() =>
+                              updateWishlistQuantity(item.id, "decrement")
+                            }
                             className="btn remove-btn"
                           >
                             Remove
@@ -96,7 +109,7 @@ export default function Wishlist() {
             <div className="text-center">
               <button
                 className="clear-btn"
-                onClick={handleClearWishlist}
+                onClick={clearWishlist}
                 disabled={wishlistItems.length === 0} // Disable the button when the wishlist is empty
               >
                 Remove All
