@@ -1,0 +1,180 @@
+.ourProducts .ourProducts__heading h2 {
+  font-size: 40px;
+  color: var(--primary);
+  text-transform: capitalize;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.ourProducts {
+  padding: 50px 0;
+  background-color: aliceblue;
+}
+.ourProducts .card {
+  margin-bottom: 30px;
+  position: relative;
+  cursor: pointer;
+}
+.ourProducts .cardProductImg {
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+.ourProducts .cardProductImg img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  transition: all 0.8s ease;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.ourProducts .cardProductImg .image1 {
+  opacity: 1;
+  position: relative;
+  inset: 0;
+}
+.ourProducts .cardProductImg .image2 {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+}
+.ourProducts .cardProductImg:hover .image1 {
+  opacity: 1;
+}
+.ourProducts .cardProductImg:hover .image2 {
+  opacity: 1;
+}
+.ourProducts .cardProductBody {
+  padding: 20px;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.ourProducts .cardProductBody h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: 10px;
+  text-transform: capitalize !important;
+}
+.ourProducts .cardProductBody .description {
+  font-size: 14px;
+  color: var(--primary);
+  margin-bottom: 10px;
+  text-transform: initial !important;
+}
+.ourProducts .cardProductBody .price {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: 10px;
+  text-transform: capitalize !important;
+}
+.ourProducts .cardProductBody .btn {
+  background-color: var(--main);
+  color: var(--primary);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  left: 50%;
+  bottom: 220px;
+  transform: translate(-50%, 30px);
+  opacity: 0;
+  z-index: 10;
+  width: 90%;
+  text-transform: capitalize !important;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.606);
+    color: var(--primary);
+  }
+}
+.ourProducts .card:hover .btn {
+  transform: translate(-50%, -30px);
+  opacity: 1;
+}
+.ourProducts .cardProductBody .heart {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+  color: #f44336;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  &:hover {
+    color: #e53935;
+  }
+}
+.ourProducts .carousel-control-next, .carousel-control-prev{
+    width: fit-content;
+    height: fit-content;
+    color: var(--primary);
+    top: 50%;
+}
+/* Responsive */
+@media only screen and (max-width: 1200px) {
+  .ourProducts .cardProductBody .btn {
+    bottom: 250px !important;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .ourProducts .ourProducts__heading h2 {
+    font-size: 30px !important;
+  }
+  .ourProducts .cardProductBody .btn {
+    bottom: 220px !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .ourProducts .ourProducts__heading h2 {
+    font-size: 25px !important;
+  }
+  .ourProducts .cardProductBody .btn {
+    bottom: 180px !important;
+  }
+  .ourProducts .cardShopImg .image1,
+  .ourProducts .cardShopImg .image2 {
+    height: 100% !important;
+  }
+  .ourProducts .cardProductBody h3 {
+    font-size: 14px !important;
+  }
+  .ourProducts .cardProductBody .description {
+    font-size: 12px !important;
+  }
+  .ourProducts .cardProductBody .price {
+    font-size: 14px !important;
+  }
+  .ourProducts .cardProductBody .heart {
+    font-size: 18px !important;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .ourProducts .ourProducts__heading h2 {
+    font-size: 20px !important;
+  }
+  .ourProducts .cardProductBody h3 {
+    font-size: 12px !important;
+  }
+  .ourProducts .cardProductBody .description {
+    font-size: 10px !important;
+  }
+  .ourProducts .cardProductBody .price {
+    font-size: 12px !important;
+  }
+  .ourProducts .cardProductBody .btn {
+    padding: 5px 10px !important;
+    font-size: 11px;
+  }
+  .ourProducts .cardProductBody .heart {
+    font-size: 14px !important;
+  }
+}

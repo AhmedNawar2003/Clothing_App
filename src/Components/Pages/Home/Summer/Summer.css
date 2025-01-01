@@ -1,7 +1,7 @@
 .summer {
   padding-top: 0;
 }
-.carousel-item {
+.summer .carousel-item {
   background-image: url("../../../../assets/image/slideshow-pattern.png");
   width: 100%;
   height: 100%;
@@ -72,5 +72,9 @@ h2 .limitTime {
 .carousel-control-prev-icon {
   background-image: none;
 }
-
-
+.summer .carousel-control-next, .carousel-control-prev{
+  width: fit-content;
+  height: fit-content;
+  color: var(--primary);
+  top: 50%;
+}

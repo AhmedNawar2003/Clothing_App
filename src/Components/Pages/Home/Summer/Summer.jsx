@@ -72,13 +72,11 @@ export default function Summer() {
             data-bs-target="#carouselExampleRide"
             data-bs-slide="prev"
           >
-            <span
-              className="carousel-control-prev-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">
+            <span className="carousel-control-prev-icon" aria-hidden="true">
+              {" "}
               <i className="fa-solid fa-angle-left"></i>
             </span>
+            <span className="visually-hidden"></span>
           </button>
           <button
             className="carousel-control-next"
@@ -86,13 +84,10 @@ export default function Summer() {
             data-bs-target="#carouselExampleRide"
             data-bs-slide="next"
           >
-            <span
-              className="carousel-control-next-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">
+            <span className="carousel-control-next-icon" aria-hidden="true">
               <i className="fa-solid fa-angle-right"></i>
             </span>
+            <span className="visually-hidden"></span>
           </button>
         </div>
       </section>

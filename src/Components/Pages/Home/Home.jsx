@@ -7,6 +7,7 @@ import Tshirts from "./Tshirts/Tshirts";
 import Uomo from "./Uomo/Uomo";
 import AOS from "aos";
 import { useEffect } from "react";
+import OurProducts from "./OurProducts/OurProducts";
 
 export default function Home() {
   useEffect(() => {
@@ -43,6 +44,9 @@ export default function Home() {
           initialSeconds={59}
         />
       </div>
+      <div data-aos="fade-right">
+        <OurProducts/>
+        </div>
       <div data-aos="fade-left">
         <Tshirts />
       </div>
