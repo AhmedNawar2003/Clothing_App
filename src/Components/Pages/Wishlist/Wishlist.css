@@ -133,3 +133,80 @@
   text-align: center;
   text-transform: capitalize;
 }
+
+/*Responsive*/
+
+@media  screen and (max-width: 992px) {
+  .wishlist .card {
+     margin-bottom: 30px !important;
+   }
+   .wishlist .head{
+     margin-bottom: 20px !important;
+     font-size: 25px !important;
+   }
+  .wishlist .cardBody {
+     padding: 10px !important;
+   }
+   .wishlist .total-price h2 {
+     font-size: 22px !important;
+   }
+ }
+ 
+ @media  screen and (max-width: 768px) {
+   .wishlist .head{
+     margin-bottom: 10px !important;
+     font-size: 20px !important;
+   }
+   .wishlist .cardImg img {
+     height: 100% !important;
+   }
+  .wishlist .cardBody {
+     padding: 5px !important;
+   }
+   .wishlist .total-price h2 {
+     font-size: 18px !important;
+   }
+   
+ }
+ 
+ @media  screen and (max-width: 576px) {
+   .wishlist .head{
+     margin-bottom: 5px !important;
+     font-size: 18px !important;
+   }
+   .wishlist .cardImg img {
+     height: 100% !important;
+   }
+   .wishlist .cardBody {
+     padding: 5px !important;
+   }
+   .wishlist .total-price h2 {
+     font-size: 16px !important;
+   }
+   .wishlist-message {
+     font-size: 14px !important;
+   }
+   .wishlist .clear-btn {
+     font-size: 14px !important;
+   }
+   .wishlist .cardBody h3 {
+     font-size: 14px !important;
+   }
+   .wishlist .cardBody p {
+     font-size: 14px !important;
+   }
+   .wishlist .cardBody .price {
+     font-size: 14px !important;
+   }
+   .wishlist .cardBody .itemNum {
+     font-size: 14px !important;
+   }
+   .wishlist .cardBody .remove-btn {
+     font-size: 14px !important;
+   }
+   .wishlist .total-price {
+     font-size: 16px !important;
+   }
+   
+ }
+ 

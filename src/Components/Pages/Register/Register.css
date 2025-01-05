@@ -136,7 +136,7 @@
   /***************************************/
   @media (max-width: 768px) {
     .register #showReg_password {
-      right: 165px !important;
+      right: 219px !important;
       font-size: 10px !important;
     }
   }
@@ -180,7 +180,7 @@
       font-size: 11px !important;
     }
     .register #showReg_password {
-      right: 115px !important;
+      right: 127px !important;
       font-size: 9px !important;
     }
     
@@ -188,7 +188,7 @@
   /***************************************/
   @media (max-width: 376px) {
     .register #showReg_password {
-      right: 135px !important;
+      right: 114px !important;
       font-size: 8px !important;
     }
     .register .signIn,
@@ -199,7 +199,7 @@
   /***************************************/
   @media (max-width: 330px) {
     .register #showReg_password {
-      right: 87px !important;
+      right: 96px !important;
           top: 69% !important;
     }
   }

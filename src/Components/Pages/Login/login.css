@@ -134,7 +134,7 @@
 /***************************************/
 @media (max-width: 768px) {
   .login #log_showPassword {
-    right: 165px !important;
+    right: 219px !important;
     font-size: 10px !important;
   }
 }
@@ -178,7 +178,7 @@
     font-size: 11px !important;
   }
   .login #log_showPassword {
-    right: 115px !important;
+    right: 127px !important;
     font-size: 9px !important;
   }
   
@@ -186,7 +186,8 @@
 /***************************************/
 @media (max-width: 376px) {
   .login #log_showPassword {
-    right: 135px !important;
+    right: 114px !important;
+    top: 68.5% !important;
     font-size: 8px !important;
   }
   .login .signIn,
@@ -197,7 +198,7 @@
 /***************************************/
 @media (max-width: 330px) {
   .login #log_showPassword {
-    right: 87px !important;
+    right: 96px !important;
         top: 69% !important;
   }
 }

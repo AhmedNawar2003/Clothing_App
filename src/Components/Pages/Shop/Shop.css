@@ -172,6 +172,7 @@
 @media only screen and (max-width: 768px) {
   .headShop h2 {
     font-size: 25px !important;
+    text-align: center;
   }
   .Shop .cardShopBody .btn {
     bottom: 180px !important;
