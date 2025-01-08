@@ -122,6 +122,7 @@
   left: 50%;
   transform: translateX(-50%);
   background-color: #4CAF50;
+  text-transform: capitalize !important; 
   color: white;
   padding: 10px 20px;
   font-size: 16px;
