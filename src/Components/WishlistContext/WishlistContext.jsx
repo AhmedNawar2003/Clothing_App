@@ -83,7 +83,7 @@ export const WishlistProvider = ({ children }) => {
           })
           .filter(Boolean) // Remove null values
     );
-    showMessage("Item quantity updated!");
+    showMessage("Item removed from wishlist!");
   };
 
   return (
